@@ -1,6 +1,35 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-<h1 class="display-4 text-success">It works!</h1>
+<div class="container py-2">
+    <div class="row py-4 pb-0 pb-sm-4 justify-content-between">
+        <div class="logo">
+            <a href="#">
+                <img src="" alt="rescue-logo" class="img-fluid">
+            </a>
+        </div>
+        <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
+            <li class="nav-item">Home</li>
+            <li class="nav-item">About Us</li>
+            <li class="nav-item">Adopt</li>
+            <li class="nav-item">Adoption Policy</li>
+            <li class="nav-item">Donate</li>
+        </ul>
+        <ul class="menu-list">
+            <li class="nav-item">Log In</li>
+            <li class="nav-item">Register</li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
