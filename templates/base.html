@@ -21,14 +21,6 @@
   {% block extra_css %}
   {% endblock %}
   {% block corejs %}
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   {% endblock %}
   {% block extra_js %}
   {% endblock %}
@@ -38,43 +30,103 @@
 
 <body>
   <header class="container fixed-top">
-    <nav class="row py-4">
-      <div class="col d-flex justify-content-between align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="/media/logo.png" alt="logo" class="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="#">Adopt a Guinea Pig</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="#">Adoption Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="#">Donate</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+              {% if request.user.is_superuser %}
+                <li class="nav-item">
+                  <a class="nav-link text-decoration-none dark-text fw-bold" href="">Management</a>
+                </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link text-decoration-none dark-text fw-bold" href="#">My Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_logout' %}">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_signup' %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_login' %}">Login</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- <header class="container fixed-top">
+    <nav class="row">
+      <div class="col d-flex justify-content-around align-items-center">
         <div class="logo">
          <a href="{% url 'home' %}">
             <img src="/media/logo.png" alt="logo" class="logo" />
           </a>
         </div>
+        <div class="main-nav">
         <ul class="menu-list list-unstyled d-flex gap-3">
           <li>
-            <a href="{% url 'home' %}" class="text-decoration-none">Home</a>
+            <a href="{% url 'home' %}" class="text-decoration-none dark-text fw-bold">Home</a>
           </li>
-          <li><a href="#" class="text-decoration-none">About Us</a></li>
+          <li><a href="#" class="text-decoration-none dark-text fw-bold">About Us</a></li>
           <li>
-            <a href="#" class="text-decoration-none">Adopt a Guinea Pig</a>
+            <a href="#" class="text-decoration-none dark-text fw-bold">Adopt a Guinea Pig</a>
           </li>
           <li>
-            <a href="#" class="text-decoration-none">Adoption Policy</a>
+            <a href="#" class="text-decoration-none dark-text fw-bold">Adoption Policy</a>
           </li>
-          <li><a href="#" class="text-decoration-none">Donate</a></li>
-
+          <li><a href="#" class="text-decoration-none dark-text fw-bold">Donate</a></li>
+        </ul>
+        </div>
+          <div class="secondary-nav">
+            <ul class="menu-list list-unstyled d-flex gap-3">
           {% if request.user.is_authenticated %}
           {% if request.user.is_superuser %}
               <a href="">Management</a>
            {% endif %}
           <li><a href="#" class="text-decoration-none">My Profile</a></li>
-          <li><a href="{% url 'account_logout' %}" class="text-decoration-none">Logout</a></li>
+          <li><a href="{% url 'account_logout' %}" class="text-decoration-none dark-text fw-bold">Logout</a></li>
           {% else %}
-          <li><a href="{% url 'account_signup' %}" class="text-decoration-none">Sign Up</a></li>
-          <li><a href="{% url 'account_login' %}" class="text-decoration-none">Login</a></li>
+          <li><a href="{% url 'account_signup' %}" class="text-decoration-none dark-text fw-bold">Sign Up</a></li>
+          <li><a href="{% url 'account_login' %}" class="text-decoration-none dark-text fw-bold">Login</a></li>
           {% endif %}
         </ul>
       </div>
+    </div>
     </nav>
-  </header>
-   
+  </header> -->
+  <div style="margin-top: 100px;"></div>
+  <hr class="dark-text fw-bold">
+
     
-  </header>
+
 
   {% if messages %}
   <div class="message-container"></div>
@@ -84,6 +136,8 @@
   {% block content %} 
   {% endblock %} 
   {% block postloadjs %} 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   {% endblock %}
 </body>
 

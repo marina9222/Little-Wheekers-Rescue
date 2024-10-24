@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --primary-text-color:#323232;
+    --secondary-text-color:
+  }
 
 html {
     height: 100vh;
@@ -10,7 +18,7 @@ html {
 
 body {
     background-color: #FFF9EB;
-    
+    padding-top: 80px; 
 }
 
 .logo {
@@ -19,3 +27,54 @@ body {
     
 }
 
+.dark-text{
+
+color : var(--primary-text-color);
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; 
+}
+.navbar-brand {
+    margin-right: 20px; 
+}
+
+.navbar-nav {
+    margin-left: 55px;
+}
+ul {
+    font-family: "Roboto",sans-serif;
+    text-transform: uppercase;
+    
+}
+
+hr{
+    border: none;
+    height: 1px;
+    color: var(--primary-text-color);
+    background-color: var(--primary-text-color);
+    
+}
+
+/*  Media queries  */
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (min-width:  992px){
+    .fixed-top-dekstop-only {
+        position: fixed;
+        top:0;
+        right:0;
+        left:0;
+        z-index: 1030;
+    }
+
+    .header-container{
+        padding-top: 164px;
+    }
+
+}
