@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: #FFF9EB;
+    
+}
+
+.logo {
+    width: 200px !important;
+    height: 200px !important;
+    
+}
+
