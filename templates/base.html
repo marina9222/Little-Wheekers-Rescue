@@ -1,55 +1,86 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     {% block meta %}
     <!-- Required meta tags -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
-
-    {% block exra_meta %}
-    {% endblock %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    {% endblock %} {% block exra_meta %} {% endblock %}
 
     <!-- Bootstrap CSS -->
-     {% block corecss %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-     {% endblock %}
-
-     {% block extra_css %}
-     {% endblock %}
-
-     {% block corejs %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-     {% endblock %}
-
-     {% block extra_js %}
-     {% endblock %}
+    {% block corecss %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    {% endblock %} {% block extra_css %}
+    <link rel="stylesheet" href="" />
+    {% endblock %} {% block corejs %}
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    {% endblock %} {% block extra_js %} {% endblock %}
 
     <title>Little Wheekers Rescue {% block extra_title %}{% endblock %}</title>
   </head>
+
   <body>
+    <header class="container fixed-top">
+      <nav class="row py-4">
+        <div class="col d-flex justify-content-between">
+          <div class="main-logo">
+            <a href="{% url 'home' %}">
+              <img src="" alt="logo" class="img-fluid" />
+            </a>
+          </div>
+          <ul class="menu-list list-unstyled d-flex gap-3">
+            <li>
+              <a href="{% url 'home' %}" class="text-decoration-none">Home</a>
+            </li>
+            <li><a href="#" class="text-decoration-none">About Us</a></li>
+            <li>
+              <a href="#" class="text-decoration-none">Adopt a Guinea Pig</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none">Adoption Policy</a>
+            </li>
+            <li><a href="#" class="text-decoration-none">Donate</a></li>
 
-  <header class="container-fluid fixed-top">
-    
-</header>
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+                <a href="">Management</a>
+             {% endif %}
+            <li><a href="#" class="text-decoration-none">My Profile</a></li>
+            <li><a href="{% url 'account_logout' %}" class="text-decoration-none">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'account_signup' %}" class="text-decoration-none">Sign Up</a></li>
+            <li><a href="{% url 'account_login' %}" class="text-decoration-none">Login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+
     {% if messages %}
-   <div class="message-container">
-
-   </div>
-   {% endif %}
-
-   {% block page_header %}
-   {% endblock %}
-
-   {% block content %}
-   {% endblock %}
-
-   {% block postloadjs %}
-   {% endblock %}
-  
+    <div class="message-container"></div>
+    {% endif %} {% block page_header %} {% endblock %} {% block content %} {% endblock %} {% block postloadjs %} {% endblock %}
   </body>
 </html>
