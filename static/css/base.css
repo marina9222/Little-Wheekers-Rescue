@@ -19,6 +19,12 @@ html {
 body {
     background-color: #FFF9EB;
     padding-top: 80px; 
+    background-image: url(/media/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    
 }
 
 .logo {
@@ -27,9 +33,14 @@ body {
     
 }
 
+
 .dark-text{
 
 color : var(--primary-text-color);
+}
+
+#topnav {
+    background-color: #fafafa !important;
 }
 
 .navbar-nav .nav-item {
@@ -54,6 +65,22 @@ hr{
     color: var(--primary-text-color);
     background-color: var(--primary-text-color);
     
+}
+
+.adopt-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.adopt-now-button:hover,
+.adopt-now-button:active,
+.adopt-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
 }
 
 /*  Media queries  */
