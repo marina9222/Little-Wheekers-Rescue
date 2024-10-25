@@ -27,11 +27,24 @@ body {
     
 }
 
-.logo {
+/* .logo {
     width: 200px !important;
     height: 200px !important;
     
-}
+} */
+
+  .logo {
+    width: 120px;
+    max-height: 150px; 
+    object-fit: contain; 
+
+  }
+
+
+  .nav-link {
+    padding: 0 15px;
+  }
+  
 
 
 .dark-text{
@@ -41,6 +54,7 @@ color : var(--primary-text-color);
 
 #topnav {
     background-color: #fafafa !important;
+    height: 80px;
 }
 
 .navbar-nav .nav-item {
@@ -59,13 +73,7 @@ ul {
     
 }
 
-hr{
-    border: none;
-    height: 1px;
-    color: var(--primary-text-color);
-    background-color: var(--primary-text-color);
-    
-}
+
 
 .adopt-now-button {
     background: black;
