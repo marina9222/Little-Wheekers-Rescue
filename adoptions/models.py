@@ -34,12 +34,17 @@ class Adopter(models.Model):
         return self.user.get_full_name() or self.user.username
 
 class Adoption(models.Model):
-    guinea_pig = models.ForeignKey('GuineaPig', on_delete=models.CASCADE, related_name='adoptions')
-    adopter = models.ForeignKey(Adopter, on_delete=models.CASCADE, related_name='adoptions')
-    adoption_date = models.DateField(auto_now_add=True, help_text="Date of adoption")
+    guinea_pig = models.ForeignKey(GuineaPig, on_delete=models.CASCADE)
+    adopter = models.ForeignKey(User, on_delete=models.CASCADE)
+    address = models.CharField(max_length=255, default="N/A")
+    phone_number = models.CharField(max_length=15, default="000-000-0000")
+    number_of_guinea_pigs = models.IntegerField(default=0)
+    living_arrangement = models.CharField(
+        max_length=10, 
+        choices=[('flat', 'Flat'), ('house', 'House')],
+        default='flat')
 
     def __str__(self):
-        return f"{self.adopter} adopted {self.guinea_pig.name} on {self.adoption_date}"
-
+        return f"Adoption of {self.guinea_pig.name} by {self.adopter.username}"
     class Meta:
         unique_together = ('guinea_pig', 'adopter')

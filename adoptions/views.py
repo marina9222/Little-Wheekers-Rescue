@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import GuineaPig, Adoption
 from django.contrib.auth.decorators import login_required
+from .forms import AdoptionForm
 
 # Create your views here.
 
@@ -14,11 +15,26 @@ def available_guinea_pigs(request):
 @login_required
 def adopt_guinea_pig(request, guinea_pig_id):
     guinea_pig = get_object_or_404(GuineaPig, id=guinea_pig_id)  
+     
     if request.method == 'POST':
-        guinea_pig.adopted = True 
-        guinea_pig.save()  
-        adopter = request.user.adopter  
-        Adoption.objects.create(guinea_pig=guinea_pig, adopter=adopter)  
-        return redirect('adoptions:available_guinea_pigs') 
+        form = AdoptionForm(request.POST)
+        if form.is_valid():
+            guinea_pig.adopted = True
+            guinea_pig.save()
+            
+            # Create the Adoption object with the provided data
+            adopter = request.user.adopter  # Assuming you have this model
+            Adoption.objects.create(
+                guinea_pig=guinea_pig,
+                adopter=adopter,
+                address=form.cleaned_data['address'],
+                phone_number=form.cleaned_data['phone_number'],
+                number_of_guinea_pigs=form.cleaned_data['number_of_guinea_pigs'],
+                living_arrangement=form.cleaned_data['living_arrangement'],
+            )
+            return redirect('adoptions:available_guinea_pigs')
 
-    return render(request, 'adoptions/adopt_guinea_pig.html', {'guinea_pig': guinea_pig}) 
+    else:
+        form = AdoptionForm()
+
+    return render(request, 'adoptions/adopt_guinea_pig.html', {'guinea_pig': guinea_pig, 'form': form})
