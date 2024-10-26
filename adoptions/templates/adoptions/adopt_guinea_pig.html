@@ -10,6 +10,7 @@
     <form method="POST">
         {% csrf_token %}
         <button type="submit" class="btn btn-success">Confirm Adoption</button>
+        <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 {% endblock %}
