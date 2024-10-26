@@ -17,21 +17,15 @@ html {
 }
 
 body {
-    background-color: #FFF9EB;
     padding-top: 80px; 
     background-image: url(/media/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 100vh;
     
 }
 
-/* .logo {
-    width: 200px !important;
-    height: 200px !important;
-    
-} */
 
   .logo {
     width: 120px;
@@ -76,8 +70,8 @@ ul {
 
 
 .adopt-now-button {
-    background: black;
-    color: white;
+    background:  #636B2F;
+    color: #fafafa;
     min-width: 260px;
 }
 
@@ -87,11 +81,45 @@ ul {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: #fafafa;
+    color: #222;
 }
 
+.list-group-item {
+    border: 1px solid #ddd;  
+    border-radius: 5px;      
+    margin-bottom: 15px;     
+    background-color: #f9f9f9; 
+}
 
+h2.text-center {
+    margin-bottom: 30px;  
+}
+
+.img-fluid {
+    max-width: 100%;         
+}
+
+.carousel-item {
+    text-align: center;  
+    padding: 20px;
+}
+
+.carousel-item img {
+    width: 100%;      
+    height: auto;     
+    max-width: 200px; 
+    border-radius: 50%; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #333; 
+}
+
+.footer {
+    margin-top: auto; 
+}
 
 /*  Media queries  */
 
