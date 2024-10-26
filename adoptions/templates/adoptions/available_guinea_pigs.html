@@ -1,20 +1,50 @@
-{% extends "base.html" %}
-
-
-
+{% extends "base.html" %} 
 {% block content %}
-<div class="container">
-    <h1>Available Guinea Pigs for Adoption</h1>
-    {% for guinea_pig in guinea_pigs %}
-        <div class="guinea-pig">
-            <h2>{{ guinea_pig.name }}</h2>
-            <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" />
-            <p>Age: {{ guinea_pig.age }} years</p>
-            <p>Gender: {{ guinea_pig.get_gender_display }}</p>
-            <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary">Adopt Now</a>
-        </div>
-    {% empty %}
-        <p>No guinea pigs available for adoption at the moment.</p>
-    {% endfor %}
+
+<div class="row">
+    <div class="col">
+        {% if not guinea_pigs %}
+            <h2 class="text-danger text-center">
+                No guinea pigs available for adoption.
+            </h2>
+        {% else %}
+            <div class="container-md">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 g-md-5">
+                    {% for guinea_pig in guinea_pigs %}
+                        <div class="col my-5">
+                            <div class="card h-100">
+                                <!-- Card Image -->
+                                {% if guinea_pig.image %}
+                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}">
+                                        <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="card-img-top img-fluid"/>
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ guinea_pig.name }}"/>
+                                    </a>
+                                {% endif %}
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title fs-3">{{ guinea_pig.name }}</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Pet Details -->
+                                    <p class="card-text main-text-color">
+                                        <strong>Age:</strong> {{ guinea_pig.age }} years<br>
+                                        <strong>Gender:</strong> {{ guinea_pig.get_gender_display }}<br>
+                                    </p>
+                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary">Adopt Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
 </div>
+
+						
 {% endblock %}
