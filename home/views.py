@@ -10,3 +10,6 @@ def index(request):
 
 def about_us(request):
     return render(request, 'home/about_us.html')
+
+def adoption_policy(request):
+    return render(request, 'home/adoption_policy.html')
