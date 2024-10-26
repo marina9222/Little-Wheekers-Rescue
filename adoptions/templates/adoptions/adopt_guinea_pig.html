@@ -1,22 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container">
     <h1>Adopt {{ guinea_pig.name }}</h1>
-    <div class="card mt-3">
-        <img src="{{ guinea_pig.image.url }}" class="card-img-top" alt="Image of {{ guinea_pig.name }}" />
-        <div class="card-body">
-            <h5 class="card-title">{{ guinea_pig.name }}</h5>
-            <p class="card-text">Age: {{ guinea_pig.age }} years</p>
-            <p class="card-text">Gender: {{ guinea_pig.get_gender_display }}</p>
-            <p class="card-text">Status: {{ guinea_pig.get_adopted_display }}</p>
+    <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" />
+    <p>Age: {{ guinea_pig.age }} years</p>
+    <p>Gender: {{ guinea_pig.get_gender_display }}</p>
 
-            <form method="post" action="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-primary">Confirm Adoption</button>
-                <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary">Cancel</a>
-            </form>
-        </div>
-    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Confirm Adoption</button>
+    </form>
 </div>
 {% endblock %}

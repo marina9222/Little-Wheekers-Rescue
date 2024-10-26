@@ -1,27 +1,20 @@
 {% extends "base.html" %}
 
+
+
 {% block content %}
-<h1>Available Guinea Pigs for Adoption</h1>
-
-<ul>
-  {% for guinea_pig in guinea_pigs %}
-    <li>
-      <h2>{{ guinea_pig.name }}</h2>
-      <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" style="max-width: 150px;">
-      <p>Gender: {{ guinea_pig.gender }}</p>
-      <p>Birth Year: {{ guinea_pig.birth_year }}</p>
-
-      {% if not guinea_pig.adopted %}
-        <form action="{% url 'adoptions:adopt_guinea_pig' guinea_pig.pk %}" method="post">
-          {% csrf_token %}
-          <button type="submit">Adopt {{ guinea_pig.name }}</button>
-        </form>
-      {% else %}
-        <p>This guinea pig has been adopted.</p>
-      {% endif %}
-    </li>
-    <hr>
-  {% endfor %}
-</ul>
-
+<div class="container">
+    <h1>Available Guinea Pigs for Adoption</h1>
+    {% for guinea_pig in guinea_pigs %}
+        <div class="guinea-pig">
+            <h2>{{ guinea_pig.name }}</h2>
+            <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" />
+            <p>Age: {{ guinea_pig.age }} years</p>
+            <p>Gender: {{ guinea_pig.get_gender_display }}</p>
+            <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary">Adopt Now</a>
+        </div>
+    {% empty %}
+        <p>No guinea pigs available for adoption at the moment.</p>
+    {% endfor %}
+</div>
 {% endblock %}
