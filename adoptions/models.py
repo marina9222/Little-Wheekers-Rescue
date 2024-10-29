@@ -25,14 +25,6 @@ class GuineaPig(models.Model):
         from datetime import date
         return date.today().year - self.birth_year
 
-class Adopter(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE) 
-    contact_number = models.CharField(max_length=15, help_text="Adopter's contact number")
-    address = models.TextField(help_text="Adopter's address")
-
-    def __str__(self):
-        return self.user.get_full_name() or self.user.username
-
 class Adoption(models.Model):
     guinea_pig = models.ForeignKey(GuineaPig, on_delete=models.CASCADE)
     adopter = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -42,9 +34,11 @@ class Adoption(models.Model):
     living_arrangement = models.CharField(
         max_length=10, 
         choices=[('flat', 'Flat'), ('house', 'House')],
-        default='flat')
+        default='flat'
+    )
 
     def __str__(self):
         return f"Adoption of {self.guinea_pig.name} by {self.adopter.username}"
+
     class Meta:
         unique_together = ('guinea_pig', 'adopter')

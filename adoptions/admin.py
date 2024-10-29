@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import GuineaPig, Adopter, Adoption
+from .models import GuineaPig, Adoption  
 
 # Register your models here.
-
 
 class GuineaPigAdmin(admin.ModelAdmin):
     list_display = ('name', 'birth_year', 'gender', 'adopted')
@@ -10,18 +9,11 @@ class GuineaPigAdmin(admin.ModelAdmin):
     search_fields = ('name', 'birth_year')
     ordering = ('name',)
 
-@admin.register(Adopter)
-class AdopterAdmin(admin.ModelAdmin):
-    list_display = ('user', 'contact_number', 'address')
-    search_fields = ('user__username', 'contact_number')
-    ordering = ('user',)
-
 class AdoptionAdmin(admin.ModelAdmin):
-    list_display = ('guinea_pig', 'adopter', 'adoption_date')
-    list_filter = ('adoption_date',)
-    search_fields = ('guinea_pig__name', 'adopter__user__username')
-    ordering = ('-adoption_date',)
+    list_display = ('guinea_pig', 'adopter', 'address', 'phone_number', 'number_of_guinea_pigs', 'living_arrangement') 
+    list_filter = ('living_arrangement',)
+    search_fields = ('guinea_pig__name', 'adopter__username')  
+    ordering = ('-guinea_pig',)  
 
-
-admin.site.register(GuineaPig)
-admin.site.register(Adoption)
+admin.site.register(GuineaPig, GuineaPigAdmin)  
+admin.site.register(Adoption, AdoptionAdmin)  
