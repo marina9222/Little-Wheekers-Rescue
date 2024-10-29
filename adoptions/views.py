@@ -17,9 +17,7 @@ def adopt_guinea_pig(request, guinea_pig_id):
 
     if request.method == 'POST':
         form = AdoptionForm(request.POST)
-        
-        if form.is_valid():
-            # Create an adoption record
+        if form.is_valid():  
             adoption = Adoption(
                 guinea_pig=guinea_pig,
                 adopter=request.user,
@@ -30,11 +28,8 @@ def adopt_guinea_pig(request, guinea_pig_id):
             )
             adoption.save()
 
-            # Mark the guinea pig as adopted
-            guinea_pig.adopted = True
-            guinea_pig.save()
-            
-            return redirect('adoption_success')
+           
+            return redirect('adoptions:adoption_success')
     else:
         form = AdoptionForm()
 

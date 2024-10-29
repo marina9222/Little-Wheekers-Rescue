@@ -40,5 +40,4 @@ class Adoption(models.Model):
     def __str__(self):
         return f"Adoption of {self.guinea_pig.name} by {self.adopter.username}"
 
-    class Meta:
-        unique_together = ('guinea_pig', 'adopter')
+ 
