@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>Adopt {{ guinea_pig.name }}</h1>
-    <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid" />
-    <p>Age: {{ guinea_pig.age }} years</p>
-    <p>Gender: {{ guinea_pig.get_gender_display }}</p>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Adopt {{ guinea_pig.name }}</h1>
+    <div class="text-center">
+    <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid mb-4" />
+</div>
+    
+    <p class="lead text-center">Age: {{ guinea_pig.age }} years</p>
+    <p class="text-center">Gender: {{ guinea_pig.get_gender_display }}</p>
 
     <form method="POST">
         {% csrf_token %}
@@ -27,15 +30,15 @@
         <div class="form-group">
             <label for="living_arrangement">Do you live in a flat or house?</label>
             <select name="living_arrangement" id="living_arrangement" class="form-control" required>
-                <option value="">Select...</option>
+                <option value="" disabled selected>Select...</option>
                 <option value="flat">Flat</option>
                 <option value="house">House</option>
             </select>
         </div>
 
         <div class="form-group text-center">
-            <button type="submit" class="btn btn-success">Submit Adoption Form</button>
-            <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-success btn-lg">Submit Adoption Form</button>
+            <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary btn-lg">Cancel</a>
         </div>
     </form>
 </div>
