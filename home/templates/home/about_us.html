@@ -1,10 +1,54 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-    <h1>About Us</h1>
-    <p>Welcome to Little Wheekers Rescue! We are dedicated to providing care and finding loving homes for guinea pigs.</p>
-    <p>Our mission is to promote the welfare of guinea pigs and educate the community about responsible pet ownership.</p>
-    <p>Thank you for supporting our rescue!</p>
+<div class="container my-5">
+    <h1 class="text-center mb-4">About Us</h1>
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <h2>Our Mission</h2>
+            <p>
+                At Little Wheekers Rescue, our mission is to provide a safe haven for abandoned and neglected guinea pigs.
+                We believe in promoting responsible pet ownership through education, adoption, and community outreach.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="/media/g-pigs1.png" alt="Our Mission" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6 order-md-2">
+            <h2>Our Story</h2>
+            <p>
+                Founded in 2020, Little Wheekers Rescue has grown from a small volunteer effort to a thriving organization,
+                dedicated to rescuing and rehabilitating guinea pigs in need. Our team is passionate about animal welfare and
+                works tirelessly to ensure each guinea pig finds a loving home.
+            </p>
+        </div>
+        <div class="col-md-6 order-md-1">
+            <img src="/media/g-pigs2.png" alt="Our Story" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+ 
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <h2>Where Donations Go</h2>
+            <p>
+                Your generous donations make a significant impact on the lives of our guinea pigs. Here's how your contributions are utilized:
+            </p>
+            <ul>
+                <li>High-quality hay for a balanced diet.</li>
+                <li>Nutritional pellets and fresh vegetables.</li>
+                <li>Regular veterinary check-ups and emergency medical care.</li>
+                <li>Clean bedding and habitat supplies.</li>
+                <li>Education and outreach programs for responsible pet ownership.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <img src="/media/g-pigs3.png" alt="Where Donations Go" class="img-fluid rounded shadow">
+        </div>
+    </div>
 </div>
 {% endblock %}
