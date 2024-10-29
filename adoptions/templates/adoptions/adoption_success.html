@@ -5,7 +5,6 @@
     <h1 class="display-4">Adoption Successful!</h1>
     <p class="lead">Thank you for adopting a guinea pig from Little Wheekers Rescue!</p>
     <p>Your adoption application has been processed successfully. We will be in touch with you soon.</p>
-    <a href="{% url 'available_guinea_pigs' %}" class="btn btn-primary">See Available Guinea Pigs</a>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Return to Home</a>
+    <a href="{% url 'home:home' %}" class="btn btn-secondary">Return to Home</a>
 </div>
 {% endblock %}
