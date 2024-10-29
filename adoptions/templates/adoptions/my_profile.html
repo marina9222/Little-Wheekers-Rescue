@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My Profile</h1>
+<h2>Your Adoption History</h2>
+
+{% if adoptions %}
+    <table>
+        <tr>
+            <th>Guinea Pig</th>
+            <th>Adoption Date</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Living Arrangement</th>
+        </tr>
+        {% for adoption in adoptions %}
+            <tr>
+                <td>{{ adoption.guinea_pig.name }}</td>
+                <td>{{ adoption.created_at|date:"Y-m-d H:i" }}</td>
+                <td>{{ adoption.address }}</td>
+                <td>{{ adoption.phone_number }}</td>
+                <td>{{ adoption.living_arrangement }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>You have not adopted any guinea pigs yet.</p>
+{% endif %}
+
+{% endblock %}

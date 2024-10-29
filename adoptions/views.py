@@ -10,6 +10,13 @@ def available_guinea_pigs(request):
     guinea_pigs = GuineaPig.objects.filter(adopted=False)
     return render(request, 'adoptions/available_guinea_pigs.html', {'guinea_pigs': guinea_pigs})
 
+
+@login_required
+def my_profile(request):
+    adoptions = Adoption.objects.filter(adopter=request.user)
+    return render(request, 'adoptions/my_profile.html', {'adoptions': adoptions})
+
+
 # View for adopting a specific guinea pig
 @login_required
 def adopt_guinea_pig(request, guinea_pig_id):
@@ -37,3 +44,5 @@ def adopt_guinea_pig(request, guinea_pig_id):
 
 def adoption_success(request):
     return render(request, 'adoptions/adoption_success.html')
+
+
