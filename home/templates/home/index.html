@@ -2,56 +2,44 @@
 {% load static %}
 
 
-<div class="container header-container">
-    <div class="row">
-        <div class="col">
-
-        </div>
-    </div>
-</div>
-
 
 {% block content %}
 <div class="container h-100">
-    <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-white">
+    <div class="row h-100 align-items-center">
+        <div class="col-12 col-md-6 my-auto text-center text-white">
+            <h1 class="display-4 logo-font">
                 Welcome to Little Wheekers Rescue
             </h1>
             <div class="my-5">
                 <h4>
-                    <a href="{% url 'adoptions:available_guinea_pigs' %}" class="adopt-now-button btn btn-lg btn-rounded-4 text-uppercase py-2">
+                    <a href="{% url 'adoptions:available_guinea_pigs' %}" class="adopt-now-button btn btn-lg btn-rounded-4 text-uppercase py-2 mx-2">
                         Adopt
                     </a>
-                    <a href="#" class="adopt-now-button btn btn-lg btn-rounded-4 text-uppercase py-2">Donate</a>
+                    <a href="#" class="adopt-now-button btn btn-lg btn-rounded-4 text-uppercase py-2 mx-2">Donate</a>
                 </h4>
             </div>
         </div>
     </div>
 </div>
-
-
-
 <!-- Testimonials Carousel Section -->
 <div class="container my-5">
     <h2 class="text-center">Adoption Stories</h2>
-    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="false"> 
+    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
-        
             <div class="carousel-item active">
                 <div class="row text-center">
                     <div class="col-md-4">
-                        <img src="/media/sarah.png" alt="Sarah's guinea pig" class="img-fluid rounded-circle" />
+                        <img src="/media/sarah.png" alt="Sarah's guinea pig" class="img-fluid rounded-circle" style="max-width: 150px;" />
                         <h5>Sarah's Experience</h5>
                         <p>"Adopting our guinea pig, Bella, was one of the best decisions we've ever made! She's brought so much joy to our home!"</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="/media/mark-ella.png" alt="Mark's and Ella's guinea pigs" class="img-fluid rounded-circle" />
+                        <img src="/media/mark-ella.png" alt="Mark's and Ella's guinea pigs" class="img-fluid rounded-circle" style="max-width: 150px;" />
                         <h5>Mark's and Ella's Experience</h5>
                         <p>"After adopting two guinea pigs, our kids couldn't be happier. They're so playful and friendly. It has truly been a wonderful experience!"</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="/media/emma.png" alt="Emma's guinea pig" class="img-fluid rounded-circle" />
+                        <img src="/media/emma.png" alt="Emma's guinea pig" class="img-fluid rounded-circle" style="max-width: 150px;" />
                         <h5>Emma's Experience</h5>
                         <p>"We adopted a guinea pig named Coco and she's become a cherished member of our family!"</p>
                     </div>
@@ -60,17 +48,17 @@
             <div class="carousel-item">
                 <div class="row text-center">
                     <div class="col-md-4">
-                        <img src="/media/brenda.png" alt="John's guinea pig" class="img-fluid rounded-circle" />
+                        <img src="/media/brenda.png" alt="Brenda's guinea pig" class="img-fluid rounded-circle" style="max-width: 150px;" />
                         <h5>Brenda's Experience</h5>
                         <p>"Adoption was seamless with Little Wheekers Rescue. Our guinea pig, Charlie, is a bundle of joy!"</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="/media/lisa.png" alt="Lisa's guinea pig" class="img-fluid rounded-circle" />
+                        <img src="/media/lisa.png" alt="Lisa's guinea pig" class="img-fluid rounded-circle" style="max-width: 150px;" />
                         <h5>Lisa's Experience</h5>
                         <p>"We love our guinea pig, Daisy! She's so affectionate and has brightened our lives tremendously!"</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="/media/kevin.png" alt="Kevin's guinea pig" class="img-fluid rounded-circle" />
+                        <img src="/media/kevin.png" alt="Kevin's guinea pig" class="img-fluid rounded-circle" style="max-width: 150px;" />
                         <h5>Kevin's Experience</h5>
                         <p>"Our family adopted two guinea pigs, and they've become part of our family!"</p>
                     </div>
@@ -88,6 +76,23 @@
     </div>
 </div>
 
+ <!-- Donations amount section -->
+<div class="container mt-5">
+    <div class="row text-center">
+        <h2 class="display-5 fw-bold">Total Donations Raised</h2>
+        <p class="text-muted mb-4">Thanks to our amazing community supporters!</p>
+    </div>
+    <div class="row align-items-center donation-section">
+        <div class="col-md-6 text-center">
+            <div class="donation-amount-box p-3 rounded-3 shadow">
+                <h3 class="display-6 text-success">£5,450</h3>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="/media/thank-you.png" alt="thank-you" class="rounded-3 shadow donation-image">
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

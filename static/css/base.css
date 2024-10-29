@@ -24,6 +24,7 @@ body {
     background-size: cover;
     height: 100vh;
     
+    
 }
 
 
@@ -120,6 +121,48 @@ h2.text-center {
 .footer {
     margin-top: auto; 
 }
+
+
+.login .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.login .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.login .socialaccount_ballot .login-or {
+    margin: 20px 0;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+
+.donation-amount-box {
+    background-color: #f8f9fa;
+    border: 2px solid #28a745;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+.donation-section {
+    margin-top: 20px;
+}
+
+.donation-amount-box {
+    background-color: #f8f9fa;
+    border: 2px solid #28a745;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.donation-image {
+    max-width: 150px !important;
+}
+
+
 
 /*  Media queries  */
 
