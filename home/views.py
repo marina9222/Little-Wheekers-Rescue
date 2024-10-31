@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 import stripe
+from .models import Donation
 from django.conf import settings
 from django.urls import reverse
+from django.utils import timezone 
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -21,11 +23,17 @@ def adoption_policy(request):
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
+from django.contrib import messages
+
 @csrf_exempt
 def donate(request):
     if request.method == 'POST':
-        amount = int(request.POST.get('amount')) * 100  
+        amount = int(request.POST.get('amount')) * 100  # Convert to cents
 
+        # Save the amount to session
+        request.session['donation_amount'] = amount
+
+        # Create a Stripe Checkout session
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[{
@@ -47,7 +55,16 @@ def donate(request):
     return render(request, 'home/donate.html')
 
 def donation_success(request):
-    return render(request, 'home/donation_success.html')
+    amount = request.session.get('donation_amount')  # Retrieve the amount from session
+
+    if request.user.is_authenticated and amount:
+       
+        Donation.objects.create(user=request.user, amount=amount / 100)  # Store amount in pounds
+        # Clear the session amount after processing
+        del request.session['donation_amount']
+    
+    return render(request, 'home/donation_success.html', {'amount': amount / 100}) 
+
 
 def donation_cancel(request):
     return render(request, 'home/donation_cancel.html')

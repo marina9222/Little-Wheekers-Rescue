@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import GuineaPig, Adoption
+from .models import GuineaPig, Adoption 
+from home.models import Donation
 from django.contrib.auth.decorators import login_required
 from .forms import AdoptionForm
 
@@ -13,9 +14,14 @@ def available_guinea_pigs(request):
 
 @login_required
 def my_profile(request):
+    # Fetch adoptions and donations for the authenticated user
     adoptions = Adoption.objects.filter(adopter=request.user)
-    return render(request, 'adoptions/my_profile.html', {'adoptions': adoptions})
+    donations = Donation.objects.filter(user=request.user).order_by('-date')  # Assuming 'date' is a field in the Donation model
 
+    return render(request, 'adoptions/my_profile.html', { 
+        'adoptions': adoptions,
+        'donations': donations,  
+    })
 
 # View for adopting a specific guinea pig
 @login_required
