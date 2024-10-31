@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h2>Donation Canceled</h2>
+    <p>It seems you canceled your donation. If this was a mistake, you can try again.</p>
+    <a href="{% url 'home:donate' %}" class="btn btn-primary">Return to Donation Page</a>
+</div>
+{% endblock %}
