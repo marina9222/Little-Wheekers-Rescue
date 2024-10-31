@@ -7,3 +7,4 @@ python-dotenv==1.0.1
 pytz==2024.2
 setuptools==65.5.1
 sqlparse==0.5.1
+stripe==11.2.0

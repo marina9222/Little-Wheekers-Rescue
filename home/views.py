@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import stripe
+from django.conf import settings
 
 
 # Create your views here.
@@ -14,3 +16,5 @@ def about_us(request):
 def adoption_policy(request):
     return render(request, 'home/adoption_policy.html')
 
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
