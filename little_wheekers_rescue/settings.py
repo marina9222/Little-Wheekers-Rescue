@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
     'little-wheekers-rescue-bfdb249eed00.herokuapp.com',
     'localhost',
     '127.0.0.1',
+    '8000-marina9222-littlewheeke-bpjsm2jg8ch.ws.codeinstitute-ide.net'
 ]
 
 
