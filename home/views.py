@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
-import stripe
-from .models import Donation
 from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone 
+from django.db.models import Sum 
 from django.views.decorators.csrf import csrf_exempt
+import stripe
+from .models import Donation
+
+
 
 
 # Create your views here.
@@ -12,7 +15,13 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def home_view(request):
-    return render(request, 'home/index.html') 
+    donations = Donation.objects.aggregate(total=Sum('amount'))['total']
+    template = 'home/index.html'
+    context = {
+        'donations': donations,
+    }
+    return render(request, template, context)
+
 
 def about_us(request):
     return render(request, 'home/about_us.html')
