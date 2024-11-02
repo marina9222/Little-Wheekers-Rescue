@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
+import dj_database_url
 from dotenv import load_dotenv
 from decouple import config
-import os
 from pathlib import Path
 
 
@@ -109,6 +110,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 WSGI_APPLICATION = 'little_wheekers_rescue.wsgi.application'
 
@@ -116,12 +118,21 @@ WSGI_APPLICATION = 'little_wheekers_rescue.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+    
 
 
 # Password validation
