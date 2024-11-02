@@ -12,19 +12,28 @@
     --secondary-text-color:
   }
 
-html {
-    height: 100vh;
+html, body {
+    height: 100%;
 }
 
 body {
     padding-top: 80px; 
+}
+
+ #home-bg {
     background-image: url(/media/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
-    
-    
+   
+  
+}
+
+
+body > footer {
+    position: sticky;
+    top: 100vh;
 }
 
 
@@ -117,6 +126,8 @@ h2.text-center {
 .carousel-control-next-icon {
     background-color: #333; 
 }
+
+
 
 .footer {
     margin-top: auto; 
