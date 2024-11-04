@@ -2,6 +2,17 @@
 
 {% block content %}
 
+
+
+{% if messages %}
+<div class="alert alert-success" role="alert">
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+
 <div class="container my-4">
     <h2 class="text-center mb-4">Add a New Guinea Pig</h2>
     <div class="row justify-content-center">
@@ -36,5 +47,13 @@
         </div>
     </div>
 </div>
+
+
+<h3>Guinea Pigs</h3>
+<ul>
+    {% for guinea_pig in guinea_pigs %}
+        <li>{{ guinea_pig.name }} , {{ guinea_pig.age }} , {{ guinea_pig.gender }}</li> 
+    {% endfor %}
+</ul>
 
 {% endblock %}
