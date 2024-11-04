@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.urls import reverse
-from django.utils import timezone 
+from django.utils import timezone
+from django.shortcuts import get_object_or_404
 from django.db.models import Sum 
 from django.views.decorators.csrf import csrf_exempt
 import stripe
@@ -98,3 +99,28 @@ def management_view(request):
     guinea_pigs = GuineaPig.objects.all()
 
     return render(request, 'home/management.html', {'form': form, 'guinea_pigs': guinea_pigs})
+
+@user_passes_test(is_manager)
+def edit_guinea_pig(request, guinea_pig_id):
+    guinea_pig = get_object_or_404(GuineaPig, id=guinea_pig_id)
+    
+    if request.method == 'POST':
+        form = GuineaPigForm(request.POST, request.FILES, instance=guinea_pig)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Guinea pig updated successfully!')
+            return redirect('/management/')
+    else:
+        form = GuineaPigForm(instance=guinea_pig)
+    
+    return render(request, 'home/edit_guinea_pig.html', {'form': form, 'guinea_pig': guinea_pig})
+
+@user_passes_test(is_manager)
+def delete_guinea_pig(request, guinea_pig_id):
+    guinea_pig = get_object_or_404(GuineaPig, id=guinea_pig_id)
+    if request.method == 'POST':
+        guinea_pig.delete()
+        messages.success(request, 'Guinea pig deleted successfully!')
+        return redirect('/management/')
+    
+    return render(request, 'home/delete_guinea_pig.html', {'guinea_pig': guinea_pig})

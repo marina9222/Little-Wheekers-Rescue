@@ -14,4 +14,6 @@ urlpatterns = [
     path('donate/success/', views.donation_success, name='donation_success'),
     path('donate/cancel/', views.donation_cancel, name='donation_cancel'),
     path('management/', views.management_view, name='management'),
+    path('guinea-pig/<int:guinea_pig_id>/edit/', views.edit_guinea_pig, name='edit_guinea_pig'),
+    path('guinea-pig/<int:guinea_pig_id>/delete/', views.delete_guinea_pig, name='delete_guinea_pig'),
 ]
