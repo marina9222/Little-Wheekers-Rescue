@@ -6,7 +6,9 @@ from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 import stripe
 from .models import Donation
-
+from .forms import GuineaPigForm
+from django.contrib.auth.decorators import user_passes_test
+from  adoptions.models import GuineaPig
 
 
 
@@ -77,3 +79,21 @@ def donation_success(request):
 
 def donation_cancel(request):
     return render(request, 'home/donation_cancel.html')
+
+
+def is_manager(user):
+    return user.is_superuser
+
+@user_passes_test(is_manager)
+def management_view(request):
+    if request.method == 'POST':
+        form = GuineaPigForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()  
+            return redirect('management_view')
+    else:
+        form = GuineaPigForm()
+
+    guinea_pigs = GuineaPig.objects.all()
+
+    return render(request, 'home/management.html', {'form': form, 'guinea_pigs': guinea_pigs})
