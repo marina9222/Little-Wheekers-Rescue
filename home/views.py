@@ -90,7 +90,8 @@ def management_view(request):
         form = GuineaPigForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()  
-            return redirect('management_view')
+            messages.success(request, 'Guinea pig added successfully!')
+            return redirect('/management/')
     else:
         form = GuineaPigForm()
 
