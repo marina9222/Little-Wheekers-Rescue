@@ -127,6 +127,33 @@ h2.text-center {
     background-color: #333; 
 }
 
+.card {
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transition: 0.3s;
+    box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), -8px -8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    height: 25vh;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .card-body .card-title {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .card-body .card-text {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .card-footer {
+    border: unset;
+  }
 
 
 .footer {
