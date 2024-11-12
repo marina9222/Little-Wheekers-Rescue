@@ -52,7 +52,7 @@
                                         <strong>Age:</strong> {{ guinea_pig.age }} years<br>
                                         <strong>Gender:</strong> {{ guinea_pig.get_gender_display }}<br>
                                     </p>
-                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary">Adopt Now</a>
+                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary adopt-now-button">Adopt Now</a>
                                     {% if request.user.is_superuser %}
                                     <a href="{% url 'home:edit_guinea_pig' guinea_pig.id %}" class="btn btn-primary">Edit</a>
                                     <a href="{% url 'home:delete_guinea_pig' guinea_pig.id %}" class="btn btn-danger btn-primary">Delete</a>

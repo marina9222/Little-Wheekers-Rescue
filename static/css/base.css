@@ -10,6 +10,7 @@
 :root {
     --primary-text-color:#323232;
     --secondary-text-color:
+
   }
 
 html, body {
@@ -17,7 +18,7 @@ html, body {
 }
 
 body {
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
  #home-bg {
@@ -29,7 +30,6 @@ body {
    
   
 }
-
 
 body > footer {
     position: sticky;
@@ -82,7 +82,7 @@ ul {
 .adopt-now-button {
     background:  #636B2F;
     color: #fafafa;
-    min-width: 260px;
+    border: none !important;
 }
 
 .adopt-now-button:hover,
