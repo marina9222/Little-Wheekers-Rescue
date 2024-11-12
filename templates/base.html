@@ -39,59 +39,60 @@
     </div>
 {% endif %}
 
-  <header class="fixed-top w-100">
-    <nav id="topnav" class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home:home' %}">
-          <img src="/media/logo.png" alt="logo" class="logo" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:about_us' %}">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'adoptions:available_guinea_pigs' %}">Adopt a Guinea Pig</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:adoption_policy' %}">Adoption Policy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:donate' %}">Donate</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-                <li class="nav-item">
-                  <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:management' %}">Management</a>
-                </li>
-              {% endif %}
+<header class="fixed-top w-100">
+  <nav id="topnav" class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home:home' %}">
+        <img src="/media/logo.png" alt="logo" class="logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:about_us' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'adoptions:available_guinea_pigs' %}">Adopt a Guinea Pig</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:adoption_policy' %}">Adoption Policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:donate' %}">Donate</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
               <li class="nav-item">
-                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'adoptions:my_profile' %}">My Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_logout' %}">Logout</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_signup' %}">Sign Up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_login' %}">Login</a>
+                <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:management' %}">Management</a>
               </li>
             {% endif %}
-          </ul>
-        </div>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'adoptions:my_profile' %}">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_logout' %}">Logout</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_signup' %}">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'account_login' %}">Login</a>
+            </li>
+          {% endif %}
+        </ul>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
+
 
   <main>
     {% block content %}
