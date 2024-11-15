@@ -138,16 +138,13 @@ h2.text-center {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    
-   
   }
   
-
   
   .card:hover {
     box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), -8px -8px 16px 0 rgba(0, 0, 0, 0.2) !important;
-    transform: translateY(-5px) !important;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
+    transform: scale(1.05); 
   }
   
   .card img {
@@ -161,14 +158,10 @@ h2.text-center {
   .card-img-top {
     height: 250px; 
     object-fit: cover; 
-    border-radius: 15px 15px 0 0; 
+    border-radius: 15px; 
     cursor: pointer;
 }
 
-.card-img-top:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
   
   .card-body .card-title {
     font-family: "Roboto", sans-serif;
@@ -202,6 +195,34 @@ h2.text-center {
     font-weight: bold;
     color: #6c757d;
 }
+
+form .form-group label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+form .form-group input,
+form .form-group select {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+}
+
+.form-width {
+    width: 60%;
+}
+
+.form-img{
+    width: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+
+}
+
+form .form-group button {
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+}
+
 
 
 .donation-amount-box {
@@ -251,3 +272,12 @@ h2.text-center {
     }
 
 }
+
+@media (max-width:480px) {
+    .form-width {
+        width: 100%;
+    }
+}
+
+
+

@@ -76,31 +76,34 @@
         </div>
     {% endif %}
 </div>
-</div>
+
 
 <!-- Modal for each guinea pig -->
 {% for guinea_pig in guinea_pigs %}
 <div class="modal fade" id="petModal{{ guinea_pig.id }}" tabindex="-1" aria-labelledby="petModal{{ guinea_pig.id }}Label" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="petModal{{ guinea_pig.id }}Label">{{ guinea_pig.name }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            {% if guinea_pig.image %}
-                <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="card-img-top img-fluid"/>
-            {% else %}
-                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ guinea_pig.name }}"/>
-            {% endif %}
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="petModal{{ guinea_pig.id }}Label">{{ guinea_pig.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if guinea_pig.image %}
+                    <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="card-img-top img-fluid w-100"/>
+                {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ guinea_pig.name }}"/>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
-</div>
 {% endfor %}
+
+
+
 
 
 						
