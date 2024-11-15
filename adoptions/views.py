@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import GuineaPig, Adoption 
 from home.models import Donation
 from django.contrib.auth.decorators import login_required
+from django.db.models import F
 from .forms import AdoptionForm
 
 # Create your views here.
@@ -9,9 +10,26 @@ from .forms import AdoptionForm
 # View for displaying available guinea pigs for adoption
 def available_guinea_pigs(request):
     guinea_pigs = GuineaPig.objects.filter(adopted=False)
-    return render(request, 'adoptions/available_guinea_pigs.html', {'guinea_pigs': guinea_pigs})
+    
+    
+    sort_by = request.GET.get('sort', None) 
 
+    if sort_by == 'age_asc':
+        guinea_pigs = guinea_pigs.order_by('-birth_year')  
+    elif sort_by == 'age_desc':
+        guinea_pigs = guinea_pigs.order_by('birth_year')
+    elif sort_by == 'gender_male':
+        guinea_pigs = guinea_pigs.filter(gender='M')
+    elif sort_by == 'gender_female':
+        guinea_pigs = guinea_pigs.filter(gender='F')
+    
 
+    return render(request, 'adoptions/available_guinea_pigs.html', {
+        'guinea_pigs': guinea_pigs,
+        'selected_sort': sort_by,
+    })
+
+    
 @login_required
 def my_profile(request):
     # Fetch adoptions and donations for the authenticated user
