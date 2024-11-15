@@ -10,6 +10,7 @@
 :root {
     --primary-text-color:#323232;
     --secondary-text-color:
+   
     
     
 
@@ -81,7 +82,12 @@ ul {
 
 
 
-
+.font-primary{
+    font-family: "Lato", sans-serif !important;
+    text-transform: uppercase;
+    color: var(--primary-text-color);
+    font-weight: none !important;
+}
 
 .adopt-now-button {
     background:  #636B2F !important;
@@ -211,8 +217,13 @@ form .form-group select {
     width: 60%;
 }
 
+.form-container {
+    width: 40%;
+    margin: 0 auto;
+}
+
 .form-img{
-    width: 200px;
+    width: 300px;
     border-radius: 15px;
     object-fit: cover;
 
@@ -250,6 +261,7 @@ form .form-group button {
 
 
 
+
 /*  Media queries  */
 
 @media (min-width:1200px) {
@@ -273,8 +285,55 @@ form .form-group button {
 
 }
 
-@media (max-width:480px) {
+
+
+@media (max-width: 991px) {  
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 56px; 
+        right: 0;
+        height: auto;  
+        width: 250px;  
+        background-color: #fafafa; 
+        box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1); 
+        display: none; 
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    
+    .navbar-collapse.show {
+        display: block; 
+        transform: translateX(0); 
+    }
+
+   
+    .navbar-toggler {
+        position: absolute;
+        right: 10px;
+        top: 10px; 
+    }
+
+ 
+    .close-btn {
+        position: absolute;
+        top: 10px;  
+        right: 10px; 
+        background: none;
+        border: none;
+        font-size: 30px;  
+        color: #333;  
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        color: #555; 
+    }
+
     .form-width {
+        width: 100%;
+    }
+    .form-container {
         width: 100%;
     }
 }

@@ -5,45 +5,49 @@
 
 
 <div class="container my-5">
-    <h1 class="text-center mb-4">Adopt {{ guinea_pig.name }}</h1>
-    <div class="text-center">
-        <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid mb-4 form-img" />
-    </div>
     
-    <form method="POST" class="d-flex flex-column align-items-center justify-content-center">
+   
+    
+    <form method="POST" class="d-flex flex-column align-items-center justify-content-center border pb-3 pt-3 rounded bg-light form-container">
         {% csrf_token %}
+
+        <h1 class="text-center mb-4">Adopt {{ guinea_pig.name }}</h1>
+
+        <div class="text-center">
+            <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid mb-4 form-img" />
+        </div>
         
         <!-- Address Field -->
-        <div class="form-group form-width mb-1">
-            <label for="address">Address</label>
+        <div class="form-group form-width mb-2">
+            <label for="address" class="font-primary">Address</label>
             <input type="text" name="address" id="address" class="form-control form-control-lg" placeholder="Enter your address" required>
         </div>
         
         <!-- Phone Number Field -->
-        <div class="form-group form-width mb-1">
-            <label for="phone_number">Phone Number</label>
+        <div class="form-group form-width mb-2">
+            <label for="phone_number" class="font-primary">Phone Number</label>
             <input type="tel" name="phone_number" id="phone_number" class="form-control form-control-lg" placeholder="Enter your phone number" required>
         </div>
 
         <!-- Number of Guinea Pigs Field -->
-        <div class="form-group form-width mb-1">
-            <label for="number_of_guinea_pigs">Number of Guinea Pigs at Home</label>
+        <div class="form-group form-width mb-2">
+            <label for="number_of_guinea_pigs" class="font-primary">Number of Guinea Pigs at Home</label>
             <input type="number" name="number_of_guinea_pigs" id="number_of_guinea_pigs" class="form-control form-control-lg" placeholder="Enter number of guinea pigs" required min="0">
         </div>
 
         <!-- Living Arrangement Dropdown -->
         <div class="form-group form-width mb-3">
-            <label for="living_arrangement">Do you live in a flat or house?</label>
+            <label for="living_arrangement" class="font-primary">Do you live in a flat or house?</label>
             <select name="living_arrangement" id="living_arrangement" class="form-control form-control-lg" required>
                 <option value="" disabled selected>Select...</option>
-                <option value="flat">Flat</option>
-                <option value="house">House</option>
+                <option value="flat" class="font-primary">Flat</option>
+                <option value="house" class="font-primary">House</option>
             </select>
         </div>
 
         <!-- Submit Button -->
         <div class="form-group text-center">
-            <button type="submit" class="btn btn-success btn-lg">Submit Adoption Form</button>
+            <button type="submit" class="btn btn-success btn-lg adopt-now-button mb-2">Submit Adoption Form</button>
             <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary btn-lg">Cancel</a>
         </div>
     </form>
