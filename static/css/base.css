@@ -304,6 +304,13 @@ form .form-group select {
     padding:10px 0px 10px 0px !important;
 }
 
+.sign-out-container {
+    
+        background-color: #fafafa;
+        padding: 20px;
+        border-radius: 5px;
+    
+}
 
 /* Donate section */
 
