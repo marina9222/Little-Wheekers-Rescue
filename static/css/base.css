@@ -300,7 +300,13 @@ form .form-group button {
     margin: 0 auto;
 }
 
-
+.donate-section {
+    background-color: #fafafa;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
 .donation-section {
     margin-top: 20px;
 }

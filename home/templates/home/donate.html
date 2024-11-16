@@ -3,15 +3,16 @@
 
 {% block content %}
 <div class="container my-5">
-    <h2 class="text-center">Support Little Wheekers Rescue</h2>
-    <p class="text-center">Your donation helps us care for guinea pigs and find them loving homes.</p>
+    <h2 class="text-center font-primary fw-bold text-uppercase">Support Little Wheekers Rescue</h2>
+    <p class="text-center font-secondary">Your donation helps us care for guinea pigs and find them loving homes.</p>
 
-    <div class="text-center my-4">
-        <button class="btn btn-primary donation-btn adopt-now-button" data-amount="5">Donate £5</button>
-        <button class="btn btn-primary donation-btn adopt-now-button" data-amount="10">Donate £10</button>
-        <button class="btn btn-primary donation-btn adopt-now-button" data-amount="20">Donate £20</button>
-        <button class="btn btn-primary donation-btn adopt-now-button" data-amount="50">Donate £50</button>
-        <button class="btn btn-primary donation-btn adopt-now-button" data-amount="100">Donate £100</button>
+    <div class="text-center my-4 rounded donate-section d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary donation-btn adopt-now-button font-secondary" data-amount="5">Donate £5</button>
+        <button class="btn btn-primary donation-btn adopt-now-button  font-secondary" data-amount="10">Donate £10</button>
+        <button class="btn btn-primary donation-btn adopt-now-button font-secondary" data-amount="20">Donate £20</button>
+        <button class="btn btn-primary donation-btn adopt-now-button font-secondary" data-amount="50">Donate £50</button>
+        <button class="btn btn-primary donation-btn adopt-now-button font-secondary" data-amount="100">Donate £100</button>
+        <button class="btn btn-primary donation-btn adopt-now-button font-secondary" data-amount="150">Donate £150</button>
     </div>
 
     <form id="donation-form" method="post" action="{% url 'home:donate' %}" style="display: none;">
