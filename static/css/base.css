@@ -132,7 +132,6 @@ form .form-group button , .btn-cancel{
     padding: 0.75rem 2rem;
 }
 
-
 /* Carousel */
 
 .list-group-item {
@@ -299,6 +298,10 @@ form .form-group select {
     border-radius: 15px;
     object-fit: cover;
 
+}
+
+.form-control-file {
+    padding:10px 0px 10px 0px !important;
 }
 
 
