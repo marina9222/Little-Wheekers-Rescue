@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
@@ -71,7 +72,26 @@ def donation_success(request):
 
     if request.user.is_authenticated and amount:
        
-        Donation.objects.create(user=request.user, amount=amount / 100)  # Store amount in pounds
+        Donation.objects.create(user=request.user, amount=amount / 100)  
+
+        user_email = request.user.email
+        subject = "Thank You for Your Generous Donation!"
+        message = (
+            f"Dear {request.user.first_name},\n\n"
+            f"Thank you for your generous donation of £{amount / 100:.2f} to Little Wheekers Rescue. "
+            "Your support helps us provide care and find loving homes for our guinea pigs.\n\n"
+            "We deeply appreciate your kindness and generosity.\n\n"
+            "Best regards,\nThe Little Wheekers Rescue Team"
+        )
+        from_email = settings.DEFAULT_FROM_EMAIL  
+        recipient_list = [user_email]
+
+        # Send the email
+        try:
+            send_mail(subject, message, from_email, recipient_list)
+        except Exception as e:
+            # Handle or log email sending failure
+            print(f"Error sending email: {e}")
         # Clear the session amount after processing
         del request.session['donation_amount']
     
