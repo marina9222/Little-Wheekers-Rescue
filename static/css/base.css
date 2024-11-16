@@ -340,7 +340,8 @@ form .form-group select {
 }
 
 .donation-image {
-    max-width: 150px !important;
+    max-width: 300px !important;
+    margin-bottom: 30px;
 }
 
 
@@ -427,8 +428,7 @@ form .form-group select {
 
     .donation-image {
         width: 80%;
-        max-width:300px !important;
-        margin-bottom: 30px;
+        
     }
   
     .carousel-inner img {
