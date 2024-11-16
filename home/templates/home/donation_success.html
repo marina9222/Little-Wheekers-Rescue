@@ -5,8 +5,8 @@
 
 {% block content %}
 <div class="container text-center my-5">
-    <h1>Thank You for Your Donation!</h1>
-    <p>You have successfully donated £{{ amount }} to Little Wheekers Rescue.</p>
-    <a href="{% url 'home:home' %}" class="btn btn-primary">Return to Home</a>
+    <h1 class="font-primary fw-bold">Thank You for Your Donation!</h1>
+    <p class="font-secondary">You have successfully donated £{{ amount }} to Little Wheekers Rescue.</p>
+    <a href="{% url 'home:home' %}" class="btn adopt-now-button font-secondary">Return to Home</a>
 </div>
 {% endblock %}
