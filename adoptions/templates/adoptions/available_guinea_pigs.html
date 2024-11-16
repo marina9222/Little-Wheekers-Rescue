@@ -15,7 +15,7 @@
 
 <div class="row">
     <div class="col text-center mt-3">
-        <h2 class="logo-font">Available guinea pigs for adoption</h2>
+        <h2 class="font-primary text-uppercase fw-bold">Available guinea pigs for adoption</h2>
     </div>
     <div class="row mb-3">
         <div class="col d-flex justify-content-end">
@@ -55,11 +55,11 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title fs-3">{{ guinea_pig.name }}</h5>
+                                        <h5 class="card-title fs-3 font-secondary">{{ guinea_pig.name }}</h5>
                                     </div>
                                 </div>
                                 <!-- Pet Details -->
-                                <p class="card-text main-text-color">
+                                <p class="card-text main-text-color font-secondary">
                                     <strong>Age:</strong> {{ guinea_pig.age }} years<br>
                                     <strong>Gender:</strong> {{ guinea_pig.get_gender_display }}<br>
                                 </p>
