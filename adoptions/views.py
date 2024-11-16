@@ -4,6 +4,8 @@ from home.models import Donation
 from django.contrib.auth.decorators import login_required
 from django.db.models import F
 from .forms import AdoptionForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
@@ -62,12 +64,28 @@ def adopt_guinea_pig(request, guinea_pig_id):
             guinea_pig.adopted = True
             guinea_pig.save()  
 
+            user_email = request.user.email
+            subject = f"Thank you for submitting your adoption form!"
+            message = (
+                f"Hi {request.user.first_name},\n\n"
+                f"Thank you for submitting your adoption form for {guinea_pig.name}. "
+                "We are excited to process your application and will get back to you soon.\n\n"
+                "Best regards,\nThe Little Wheekers Rescue Team"
+            )
+            from_email = settings.DEFAULT_FROM_EMAIL
+            recipient_list = [user_email]
+
+            try:
+                send_mail(subject, message, from_email, recipient_list)
+            except Exception as e:
+                # Log or handle email sending failure if needed
+                print(f"Error sending email: {e}")
+
             return redirect('adoptions:adoption_success')
     else:
         form = AdoptionForm()
 
     return render(request, 'adoptions/adopt_guinea_pig.html', {'guinea_pig': guinea_pig, 'form': form})
-
 
 def adoption_success(request):
     return render(request, 'adoptions/adoption_success.html')
