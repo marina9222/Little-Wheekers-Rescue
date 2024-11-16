@@ -8,10 +8,10 @@
     
    
     
-    <form method="POST" class="d-flex flex-column align-items-center justify-content-center border pb-3 pt-3 rounded bg-light form-container">
+    <form method="POST" class="d-flex flex-column align-items-center justify-content-center border p-3 rounded bg-light form-container shadow">
         {% csrf_token %}
 
-        <h1 class="text-center mb-4">Adopt {{ guinea_pig.name }}</h1>
+        <h2 class="text-center mb-4 font-primary fw-bold text-uppercase">Adopt {{ guinea_pig.name }}</h2>
 
         <div class="text-center">
             <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid mb-4 form-img" />
@@ -46,9 +46,9 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-group text-center">
-            <button type="submit" class="btn btn-success btn-lg adopt-now-button mb-2">Submit Adoption Form</button>
-            <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary btn-lg">Cancel</a>
+        <div class="form-group text-center d-flex gap-3">
+            <button type="submit" class="btn adopt-now-button font-secondary">Submit</button>
+            <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-cancel bg-secondary text-white font-secondary">Cancel</a>
         </div>
     </form>
 </div>
