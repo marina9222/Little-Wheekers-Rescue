@@ -220,6 +220,19 @@ h2.text-center {
     background-color: #fff;
     background-clip: border-box;
   }
+
+
+  .card-sign-up{
+    border-radius: 15px !important; 
+    overflow: hidden; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+  }
   
   
   .card:hover {
