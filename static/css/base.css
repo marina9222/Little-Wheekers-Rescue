@@ -322,7 +322,10 @@ form .form-group button {
     max-width: 150px !important;
 }
 
-
+.btn-link {
+    color: #636B2F !important;
+   
+}
 
 
 /*  Media queries  */
