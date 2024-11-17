@@ -11,44 +11,30 @@
       <div class="card-sign-up p-5 shadow text-center">
         <h2 class="mb-4 font-primary fw-bold text-uppercase">{% trans "Sign Up" %}</h2>
 
-        <form id="signup_form" method="post" action="{% url 'account_signup' %}">
+
+        <form method="POST" action="{% url 'account_signup' %}">
           {% csrf_token %}
-
-          {% for field in form %}
-          <div class="mb-4">
-            <div class="input-group justify-content-center">
-              <span class="input-group-text bg-primary text-white">
-                {% if field.name == 'username' %}
-                <i class="fas fa-user"></i>
-                {% elif field.name == 'email' %}
-                <i class="fas fa-envelope"></i>
-                {% elif field.name == 'password1' %}
-                <i class="fas fa-lock"></i>
-                {% elif field.name == 'password2' %}
-                <i class="fas fa-lock"></i>
-                {% else %}
-                <i class="fas fa-pencil-alt"></i>
-                {% endif %}
-              </span>
-              {{ field }}
-            </div>
-            {% if field.errors %}
-            <div class="text-danger mt-2">
-              {{ field.errors }}
-            </div>
-            {% endif %}
+          <div class="input-group mb-4">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+              {{ form.username }}
           </div>
-          {% endfor %}
-
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-
+          <div class="input-group mb-4">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              {{ form.email }}
+          </div>
+          <div class="input-group mb-4">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              {{ form.password1 }}
+          </div>
+          <div class="input-group mb-4">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              {{ form.password2 }}
+          </div>
           <button type="submit" class="btn btn-primary adopt-now-button mb-4">{% trans "Sign Up" %}</button>
           <p class="font-secondary">
             {% blocktrans %}Already have an account? <br>Then please <a href="{{ login_url }}" class="color-primary">sign in</a>.{% endblocktrans %}
           </p>
-        </form>
+      </form>
       </div>
     </div>
   </div>

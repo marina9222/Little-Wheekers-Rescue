@@ -11,8 +11,7 @@
         <div class="col-md-6 col-lg-5">
             <div class="card-sign-up shadow p-4">
                 <h2 class="text-center mb-4 font-primary fw-bold text-uppercase">{% trans "Sign In" %}</h2>
-
-               
+        
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     <div class="mb-3">
@@ -46,7 +45,7 @@
                         {% include "socialaccount/snippets/login_extra.html" %}
                     {% else %}
                         <p class="text-center mb-4">{% blocktrans %}If you have not created an account yet, then please
-                            <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                            <a href="{{ signup_url }}" class="color-primary">sign up</a> first.{% endblocktrans %}</p>
                     {% endif %}
     
                 </form>
