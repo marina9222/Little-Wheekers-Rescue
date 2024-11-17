@@ -5,38 +5,58 @@
 {% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
 {% block content %}
-<div class="container my-5 d-flex justify-content-center">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card-sign-up p-5 shadow text-center">
-        <h2 class="mb-4 font-primary fw-bold text-uppercase">{% trans "Sign Up" %}</h2>
 
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card-sign-up shadow p-4">
+                <h2 class="text-center mb-4 font-primary fw-bold text-uppercase">{% trans "Sign Up" %}</h2>
 
-        <form method="POST" action="{% url 'account_signup' %}">
-          {% csrf_token %}
-          <div class="input-group mb-4">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-              {{ form.username }}
-          </div>
-          <div class="input-group mb-4">
-              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-              {{ form.email }}
-          </div>
-          <div class="input-group mb-4">
-              <span class="input-group-text"><i class="fas fa-lock"></i></span>
-              {{ form.password1 }}
-          </div>
-          <div class="input-group mb-4">
-              <span class="input-group-text"><i class="fas fa-lock"></i></span>
-              {{ form.password2 }}
-          </div>
-          <button type="submit" class="btn btn-primary adopt-now-button mb-4">{% trans "Sign Up" %}</button>
-          <p class="font-secondary">
-            {% blocktrans %}Already have an account? <br>Then please <a href="{{ login_url }}" class="color-primary">sign in</a>.{% endblocktrans %}
-          </p>
-      </form>
-      </div>
+                <form method="POST" action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+
+                    
+                    <div class="input-group mb-4">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        {{ form.username }}
+                    </div>
+
+            
+                    <div class="input-group mb-4">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        {{ form.email }}
+                    </div>
+
+                    
+                    <div class="input-group mb-4">
+                      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                      {{ form.email2 }} 
+                  </div>
+                   
+                    <div class="input-group mb-4">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        {{ form.password1 }}
+                    </div>
+
+                    
+                    <div class="input-group mb-4">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        {{ form.password2 }}
+                    </div>
+
+                   
+                    <button type="submit" class="btn btn-primary w-100">{% trans "Sign Up" %}</button>
+
+                   
+                    <p class="text-center mt-3">
+                        {% trans "Already have an account?" %}
+                        <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
 {% endblock %}
+
