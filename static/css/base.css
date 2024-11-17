@@ -21,6 +21,8 @@ body {
     padding-top: 80px;
 }
 
+
+
  #home-bg {
     background-image: url(/media/bg.jpg);
     background-repeat: no-repeat;
@@ -39,7 +41,7 @@ body > footer {
     /* Logo */
 
   .logo {
-    max-height: 50px; 
+    max-height: 100px; 
     height: auto;
     width: auto;
 
@@ -83,6 +85,18 @@ background: none;
     right: 10px;
     z-index: 1050;
 }
+
+.navbar {
+    flex-wrap: nowrap !important;
+}
+
+
+ /* About Us section */
+
+ .about-us-container {
+    padding: 0 20px 0 20px !important;
+ }
+
 
  /* Fonts */
 
@@ -181,21 +195,25 @@ h2.text-center {
 }
 .carousel-inner img {
      width: 100%; 
-       max-width: 150px; 
-        height: 150px; 
-        object-fit: cover;
-        object-position: center; 
-        border-radius: 50%; 
-        margin: 0 auto; 
-        display: block; 
+     max-width: 150px; 
+     height: 150px; 
+     object-fit: cover;
+     object-position: center; 
+     border-radius: 50%; 
+     margin: 0 auto; 
+     display: block; 
+
+}
+
+
+.carousel-control-prev {
+    left: -15%;
+
     }
 
-    .carousel-control-prev {
-        left: -15%;
-    }
-
-    .carousel-control-next {
-        right: -15%;
+.carousel-control-next {
+     right: -15%;
+    
     }
 
 
@@ -242,19 +260,12 @@ h2.text-center {
   }
   
   .card img {
-    height: 25vh;
-    object-fit: cover ;
+    height: 250px; 
+    object-fit: cover;
     width: 100%;
     cursor: pointer !important;
     border-radius: 15px 15px 0 0 !important;
   }
-
-  .card-img-top {
-    height: 250px; 
-    object-fit: cover; 
-    border-radius: 15px; 
-    cursor: pointer;
-}
 
   
   .card-body .card-title {
@@ -385,6 +396,11 @@ form .form-group select {
 
 
 @media (max-width: 991px) {  
+
+    .logo {
+        max-height: 100px; 
+
+    }
     
     .navbar-collapse {
         position: absolute;
@@ -407,8 +423,7 @@ form .form-group select {
    
     .navbar-toggler {
         position: absolute;
-        right: 10px;
-        top: 10px; 
+        right: 10px; 
     }
 
  

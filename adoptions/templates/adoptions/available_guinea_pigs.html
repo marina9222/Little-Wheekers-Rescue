@@ -14,7 +14,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col text-center mt-3">
+    <div class="col text-center mt-5">
         <h2 class="font-primary text-uppercase fw-bold">Available guinea pigs for adoption</h2>
     </div>
     <div class="row mb-3">
@@ -47,7 +47,7 @@
                         <div class="card h-100">
                             <!-- Card Image -->
                             {% if guinea_pig.image %}
-                                <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}"/>
+                                <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}"/>
                             {% else %}
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ guinea_pig.name }}" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}"/>
                             {% endif %}
