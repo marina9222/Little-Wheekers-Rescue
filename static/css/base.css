@@ -387,11 +387,15 @@ form .form-group select {
     margin: 0 auto;
 }
 
+tbody {
+ background-color: #fafafa;
+}
+
 .donate-section {
     background-color: #fafafa;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 20px;
+    padding: 40px;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 .donation-section {
@@ -434,9 +438,70 @@ form .form-group select {
 
 }
 
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 39px;
+        right: 0;
+        height: auto;  
+        width: 250px;  
+        background-color: #fafafa; 
+        box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1); 
+        display: none; 
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    
+    .navbar-collapse.show {
+        display: block; 
+        transform: translateX(0); 
+    }
+
+   
+    .navbar-toggler {
+        position: absolute;
+        right: 10px; 
+    }
+
+ 
+    .close-btn {
+        position: absolute; 
+        right: 10px; 
+        background: none;
+        border: none;
+        font-size: 30px;  
+        color: #333;  
+        cursor: pointer;
+        top: 25px;
+    }
+
+    .close-btn:hover {
+        color: #555; 
+    }
+
+    .logo {
+        max-height: 100px; 
+
+    }
+    #home-bg {
+        background-position: right -200px bottom 150px;
+    }
+
+        .carousel-control-prev {
+            left:-10%;
+        }
+    
+        .carousel-control-next {
+            right:-10%;
+        }
+        .form-container {
+            width: 70%;
+        }
+}
 
 
-@media (max-width: 991px) {  
+
+@media only screen and (max-width: 768px){  
 
     .logo {
         max-height: 100px; 
@@ -498,6 +563,10 @@ form .form-group select {
     .donation-image {
         width: 80%;
         
+    }
+
+    .donate-section {
+        padding: 20px;
     }
   
     .carousel-inner img {
