@@ -98,7 +98,7 @@ background: none;
  }
 
 
- /* Fonts */
+ /* Fonts and Colors*/
 
 .font-primary{
     font-family: "Lato", sans-serif !important;
@@ -113,6 +113,15 @@ background: none;
 .font-secondary {
     font-family: "Roboto" ,sans-serif !important;
 }
+
+.bg-primary{
+    background-color: #636B2F !important;
+}
+.color-primary {
+   color: #636B2F !important;
+}
+
+
 
 /* Buttons */
 
@@ -239,19 +248,20 @@ h2.text-center {
     background-clip: border-box;
   }
 
-
   .card-sign-up{
     border-radius: 15px !important; 
     overflow: hidden; 
     position: relative;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #f9f9f9;
+    padding: 20px 70px 10px 70px !important;
     background-clip: border-box;
   }
-  
+
   
   .card:hover {
     box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2), -8px -8px 16px 0 rgba(0, 0, 0, 0.2) !important;
@@ -290,6 +300,38 @@ h2.text-center {
 
 /* Forms */
 
+.card-sign-up input {
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.card-sign-up .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+.input-group {
+    margin-top: 5px;
+}
+
+.input-group-text {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.input-group-text i {
+    font-size: 14px;
+}
 
 .login .socialaccount_ballot .login-or {
     margin: 20px 0;
@@ -367,7 +409,6 @@ form .form-group select {
     max-width: 300px !important;
     margin-bottom: 30px;
 }
-
 
 
 /*  Media queries  */
