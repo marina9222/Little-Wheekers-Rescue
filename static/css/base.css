@@ -182,7 +182,7 @@ h2.text-center {
 }
 
 .flex-custom {
-    gap:10px !important;
+    gap:3px !important;
     flex-wrap: nowrap !important;
 
 }
@@ -217,17 +217,9 @@ h2.text-center {
 }
 
 
-.carousel-control-prev {
-    left: -15%;
-
-    }
-
-.carousel-control-next {
-     right: -15%;
-    
-    }
-
-
+.carousel-control-next, .carousel-control-prev {
+    top: unset;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: #333; 
@@ -627,9 +619,10 @@ tbody {
     }
 
     #home-bg {
-     background-position: right -200px bottom 150px;
-
+        background-position: center right;
     }
+
+    
 
     .donation-image {
         width: 80%;
@@ -640,6 +633,10 @@ tbody {
         padding: 20px;
     }
   
+    .carousel-control-next, .carousel-control-prev {
+        top: 10%;
+    }
+
     .carousel-inner img {
         max-width: 120px; 
         height: 120px;
@@ -648,15 +645,9 @@ tbody {
     .carousel-inner .col-md-4 {
         margin-left: 0;
     }
-    .carousel-control-prev {
-        left:0;
-    }
-
-    .carousel-control-next {
-        right:0;
-    }
+    
         .flex-custom {
-            gap: 10px !important;
+            gap: 5px !important;
             flex-wrap: wrap !important;
         }
     
