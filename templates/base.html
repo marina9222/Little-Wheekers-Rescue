@@ -48,8 +48,7 @@
         <button class="close-btn d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Close Menu">
           <span>&times;</span> 
         </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center font-primary fw-bold text-uppercase mt-3">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center font-primary fw-bold text-uppercase">
           <li class="nav-item">
             <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:home' %}">Home</a>
           </li>
@@ -66,7 +65,7 @@
             <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:donate' %}">Donate</a>
           </li>
         </ul>
-        <ul class="navbar-nav font-primary fw-bold text-uppercase mb-3">
+        <ul class="navbar-nav font-primary fw-bold text-uppercase">
           {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
               <li class="nav-item">
@@ -94,7 +93,7 @@
 </header>
 
 
-  <main>
+  <main class="container-fluid">
     {% block content %}
     {% endblock %}
   </main>

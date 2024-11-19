@@ -33,6 +33,11 @@ body {
    
 }
 
+.container-fluid{
+ padding-left: 0 !important;
+ padding-right: 0 !important;
+
+}
 
 body > footer {
     position: sticky;
@@ -57,6 +62,10 @@ body > footer {
 #topnav {
     background-color: var(--primary-bg-color) !important;
     height: 80px;
+}
+
+.nav-item .nav-link {
+    white-space: nowrap; 
 }
 
 .navbar-toggler {
@@ -88,6 +97,8 @@ background: none;
 
 .navbar {
     flex-wrap: nowrap !important;
+    width: 100%; 
+    overflow: hidden;
 }
 
 
@@ -124,6 +135,16 @@ color : var(--primary-text-color);
 }
 
 
+/* Alerts */
+
+
+.alert-info {
+    color: #000;
+    background-color: var(--primary-bg-color);
+    max-width: 50%;
+    border: none;
+    margin: 0 auto;
+}
 
 /* Buttons */
 
@@ -492,16 +513,12 @@ tbody {
         z-index: 1030;
     }
 
-    .header-container{
-        padding-top: 164px;
-    }
-
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     .navbar-collapse {
         position: absolute;
-        top: 39px;
+        top: 80px;
         right: 0;
         height: auto;  
         width: 250px;  
@@ -511,7 +528,6 @@ tbody {
         transition: transform 0.3s ease-in-out; 
     }
 
-    
     .navbar-collapse.show {
         display: block; 
         transform: translateX(0); 
@@ -532,7 +548,7 @@ tbody {
         font-size: 30px;  
         color: #333;  
         cursor: pointer;
-        top: 25px;
+        top: -13px;
     }
 
     .close-btn:hover {
@@ -543,9 +559,7 @@ tbody {
         max-height: 100px; 
 
     }
-    #home-bg {
-        background-position: right -200px bottom 150px;
-    }
+  
 
         .carousel-control-prev {
             left:-10%;
@@ -576,7 +590,7 @@ tbody {
     
     .navbar-collapse {
         position: absolute;
-        top: 39px;
+        top: 80px;
         right: 0;
         height: auto;  
         width: 250px;  
@@ -607,7 +621,7 @@ tbody {
         font-size: 30px;  
         color: #333;  
         cursor: pointer;
-        top: 25px;
+        top: -13px;
     }
 
     .close-btn:hover {
