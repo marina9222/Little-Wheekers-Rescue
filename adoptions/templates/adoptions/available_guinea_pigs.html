@@ -44,7 +44,15 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 g-md-5">
                 {% for guinea_pig in guinea_pigs %}
                     <div class="col my-3">
-                        <div class="card h-100">
+                        <div class="card h-100 adoption-card">
+                             {% if guinea_pig.adopted %}
+                                <!-- corner ribbon -->
+                                <div class="ribbon">
+                                    <span class="adopted">
+                                        ADOPTED
+                                    </span>
+                                </div>
+                            {% endif %}
                             <!-- Card Image -->
                             {% if guinea_pig.image %}
                                 <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}"/>
@@ -63,7 +71,12 @@
                                     <strong>Age:</strong> {{ guinea_pig.age }} years<br>
                                     <strong>Gender:</strong> {{ guinea_pig.get_gender_display }}<br>
                                 </p>
-                                <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary adopt-now-button font-secondary">Adopt Now</a>
+                                
+                                {% if not guinea_pig.adopted %}
+                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary adopt-now-button font-secondary">Adopt Now</a>
+                                {% else %}
+                                    <span class="btn btn-secondary font-secondary">Adopted</span>
+                                {% endif %}
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'home:edit_guinea_pig' guinea_pig.id %}" class="btn btn-primary font-secondary">Edit</a>
                                 <a href="{% url 'home:delete_guinea_pig' guinea_pig.id %}" class="btn btn-danger btn-primary font-secondary">Delete</a>

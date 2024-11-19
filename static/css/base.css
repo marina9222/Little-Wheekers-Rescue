@@ -283,6 +283,78 @@ h2.text-center {
     border: unset;
   }
 
+
+  /* RIBBONS */
+.adoption-card {
+    overflow: visible;
+}
+
+.ribbon {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 93px;
+    height: 93px;
+    text-align: right;
+}
+
+.ribbon span {
+    --ribbon-adopted: #dc3545;
+    font-size: 0.75em;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    line-height: 32px;
+    transform: rotate(45deg);
+    width: 125px;
+    display: block;
+    box-shadow: 0 3px 10px -5px black;
+    text-shadow: 1px 1px 1px black;
+    position: absolute;
+    top: 17px;
+    right: -29px;
+}
+
+.ribbon span::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    z-index: -1;
+}
+
+.ribbon span::after {
+    content: "";
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    z-index: -1;
+}
+
+/* ribbons: adopted */
+.ribbon span.adopted {
+    background: var(--ribbon-adopted);
+    background-size: 100% 33%, 100% 66%, 100%;
+    background-repeat: no-repeat;
+}
+
+.ribbon span.adopted::before {
+    border-left: 3px solid var(--ribbon-adopted);
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid var(--ribbon-adopted);
+}
+
+.ribbon span.adopted::after {
+    border-right: 3px solid var(--ribbon-adopted);
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid var(--ribbon-adopted);
+}
+
 /* Footer */
 
 
