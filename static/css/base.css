@@ -9,6 +9,8 @@
 
 :root {
   --primary-text-color:#323232;
+  --primary-color: #636B2F;
+  --primary-bg-color: #FAFAFA;
   }
 
 
@@ -53,7 +55,7 @@ body > footer {
   }
   
 #topnav {
-    background-color: #fafafa !important;
+    background-color: var(--primary-bg-color) !important;
     height: 80px;
 }
 
@@ -95,6 +97,9 @@ background: none;
     padding: 0 20px 0 20px !important;
  }
 
+ .dropdown-item.active {
+    background-color: var(--primary-color);
+ }
 
  /* Fonts and Colors*/
 
@@ -104,19 +109,18 @@ background: none;
 }
 
 .dark-text{
-
-    color : var(--primary-text-color);
-       }
+color : var(--primary-text-color);
+ }
 
 .font-secondary {
     font-family: "Roboto" ,sans-serif !important;
 }
 
 .bg-primary{
-    background-color: #636B2F !important;
+    background-color: var(--primary-color) !important;
 }
 .color-primary {
-   color: #636B2F !important;
+   color: var(--primary-color) !important;
 }
 
 
@@ -125,8 +129,8 @@ background: none;
 
 
 .adopt-now-button {
-    background:  #636B2F !important;
-    color: #fafafa !important;
+    background:  var(--primary-color) !important;
+    color: var(--primary-bg-color) !important;
     border: none !important;
 }
 
@@ -144,7 +148,7 @@ background: none;
 }
 
 .btn-link {
-    color: #636B2F !important;
+    color: var(--primary-color) !important;
    
 }
 
@@ -159,7 +163,7 @@ form .form-group button , .btn-cancel{
     border: 1px solid #ddd;  
     border-radius: 5px;      
     margin-bottom: 15px;     
-    background-color: #f9f9f9; 
+    background-color: var(--primary-bg-color); 
 }
 
 h2.text-center {
@@ -184,7 +188,7 @@ h2.text-center {
 }
 
 .carousel-inner .col-md-4 {
-    background-color: #f9f9f9;
+    background-color: var(--primary-bg-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -242,7 +246,7 @@ h2.text-center {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: var(--primary-bg-color);
     background-clip: border-box;
   }
 
@@ -275,15 +279,6 @@ h2.text-center {
     border-radius: 15px 15px 0 0 !important;
   }
 
-  
-  .card-body .card-title {
-    font-family: "Roboto", sans-serif;
-  }
-  
-  .card-body .card-text {
-    font-family: "Lato", sans-serif;
-  }
-  
   .card-footer {
     border: unset;
   }
@@ -322,8 +317,8 @@ h2.text-center {
 }
 
 .input-group-text {
-    background-color:#636B2F !important;
-    color: white;
+    background-color:var(--primary-color) !important;
+    color: #fff;
     border: none;
 }
 
@@ -370,7 +365,7 @@ form .form-group select {
 
 .sign-out-container {
     
-        background-color: #fafafa;
+        background-color: var(--primary-bg-color);
         padding: 20px;
         border-radius: 5px;
     
@@ -379,18 +374,18 @@ form .form-group select {
 /* Donate section */
 
 .donation-amount-box {
-    background-color: #f8f9fa;
+    background-color: var(--primary-bg-color);
     border: 2px solid #28a745;
     max-width: 500px;
     margin: 0 auto;
 }
 
 tbody {
- background-color: #fafafa;
+ background-color: var(--primary-bg-color);
 }
 
 .donate-section {
-    background-color: #fafafa;
+    background-color: var(--primary-bg-color);
     flex-wrap: wrap;
     gap: 10px;
     padding: 40px;
@@ -401,7 +396,7 @@ tbody {
 }
 
 .donation-amount-box {
-    background-color: #f8f9fa;
+    background-color: var(--primary-bg-color);
     border: 2px solid #28a745;
     max-width: 300px;
     margin: 0 auto;
@@ -443,7 +438,7 @@ tbody {
         right: 0;
         height: auto;  
         width: 250px;  
-        background-color: #fafafa; 
+        background-color: var(--primary-bg-color); 
         box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1); 
         display: none; 
         transition: transform 0.3s ease-in-out; 
@@ -518,7 +513,7 @@ tbody {
         right: 0;
         height: auto;  
         width: 250px;  
-        background-color: #fafafa; 
+        background-color: var(--primary-bg-color); 
         box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1); 
         display: none; 
         transition: transform 0.3s ease-in-out; 

@@ -44,13 +44,13 @@
                         {{ form.password2 }}
                     </div>
 
-                   
-                    <button type="submit" class="btn btn-primary w-100">{% trans "Sign Up" %}</button>
-
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary adopt-now-button">{% trans "Sign Up" %}</button>
+                    </div>                        
                    
                     <p class="text-center mt-3">
                         {% trans "Already have an account?" %}
-                        <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                        <a href="{% url 'account_login' %}" class="color-primary">{% trans "Sign In" %}</a>
                     </p>
                 </form>
             </div>
