@@ -49,7 +49,7 @@
           <span>&times;</span> 
         </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center font-primary fw-bold text-uppercase">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center font-primary fw-bold text-uppercase mt-3">
           <li class="nav-item">
             <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:home' %}">Home</a>
           </li>
@@ -66,7 +66,7 @@
             <a class="nav-link text-decoration-none dark-text fw-bold" href="{% url 'home:donate' %}">Donate</a>
           </li>
         </ul>
-        <ul class="navbar-nav font-primary fw-bold text-uppercase">
+        <ul class="navbar-nav font-primary fw-bold text-uppercase mb-3">
           {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
               <li class="nav-item">
@@ -114,10 +114,10 @@
               </p>
           </div>
           <div class="col-auto d-flex align-items-center justify-content-end">
-            <a href="#" class="text-white me-2" title="Visa">
+            <a href="{% url 'home:donate' %}" class="text-white me-2" title="Visa">
                 <i class="fab fa-cc-visa fa-lg"></i>
             </a>
-            <a href="#" class="text-white me-2" title="MasterCard">
+            <a href="{% url 'home:donate' %}" class="text-white me-2" title="MasterCard">
                 <i class="fab fa-cc-mastercard fa-lg"></i>
             </a>
         </div>
