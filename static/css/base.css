@@ -22,7 +22,6 @@ body {
 }
 
 
-
  #home-bg {
     background-image: url(/media/bg.jpg);
     background-repeat: no-repeat;
@@ -56,7 +55,6 @@ body > footer {
 #topnav {
     background-color: #fafafa !important;
     height: 80px;
-    padding: 0.5rem 1rem;
 }
 
 .navbar-toggler {
@@ -502,6 +500,12 @@ tbody {
 
 
 @media only screen and (max-width: 768px){  
+
+    body, html {
+        overflow: auto;
+        max-height: 100% !important;
+    }
+
 
     .logo {
         max-height: 100px; 
