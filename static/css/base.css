@@ -182,7 +182,7 @@ h2.text-center {
 }
 
 .flex-custom {
-    gap:3px !important;
+    gap: 3px !important;
     flex-wrap: nowrap !important;
 
 }
@@ -646,10 +646,10 @@ tbody {
         margin-left: 0;
     }
     
-        .flex-custom {
-            gap: 5px !important;
-            flex-wrap: wrap !important;
-        }
+    .flex-custom {
+        gap: 5px;
+        flex-wrap: wrap !important;
+    }
     
     .navbar-nav {
         margin-left: 0;
