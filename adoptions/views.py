@@ -11,7 +11,7 @@ from django.conf import settings
 
 # View for displaying available guinea pigs for adoption
 def available_guinea_pigs(request):
-    guinea_pigs = GuineaPig.objects.filter(adopted=False)
+    guinea_pigs = GuineaPig.objects.all().order_by("adopted", "name")
     
     
     sort_by = request.GET.get('sort', None) 
