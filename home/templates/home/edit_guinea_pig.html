@@ -5,10 +5,11 @@
 
    
     <div class="container my-4 form-container">
-    <h2 class="font-primary fw-bold text-center text-uppercase">Edit Guinea Pig</h2>
-    <form method="post" enctype="multipart/form-data" class="list-group-item shadow">
+    <h3 class="font-primary fw-bold text-center text-uppercase mb-3">Edit Guinea Pig</h3>
+    
+    <form method="post" enctype="multipart/form-data" class="list-group-item shadow form-container rounded p-4">
         {% csrf_token %}
-        
+       
         <div class="form-group">
             {{ form.name.label_tag }}
             {{ form.name }}
@@ -16,8 +17,8 @@
         </div>
 
         <div class="form-group">
-            {{ form.age.label_tag }}
-            {{ form.age }}
+            {{ form.birth_year.label_tag }}
+            {{ form.birth_year}}
             {{ form.age.errors }}
         </div>
         <div class="form-group">
@@ -31,9 +32,9 @@
             {{ form.image }}
             {{ form.image.errors }}
         </div>
-        <div class="text-center">
-        <button type="submit" class="btn btn-primary adopt-now-button font-secondary">Update Guinea Pig</button>
-        <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary font-secondary">Cancel</a>
+        <div class="text-center d-flex justify-content-center flex-custom">
+        <button type="submit" class="btn adopt-now-button font-secondary">Update Guinea Pig</button>
+        <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary">Cancel</a>
     </div>
     </form>
 </div>
