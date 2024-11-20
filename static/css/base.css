@@ -150,8 +150,8 @@ form .form-group button , .btn-cancel{
 }
 
 .form-container label {
-    display: block; /* Ensures the label is block-level and spans the full width above the input */
-    margin-bottom: 0.5rem; /* Adds spacing between label and input */
+    display: block; 
+    margin-bottom: 0.5rem; 
 }
 
 /* Carousel */
@@ -474,96 +474,160 @@ tbody {
 
 /*  Media queries  */
 
-@media (min-width:1200px) {
-    .container {
-        max-width: 80%;
-    }
-}
 
-@media (min-width:  992px){
-    .fixed-top-dekstop-only {
-        position: fixed;
-        top:0;
-        right:0;
-        left:0;
-        z-index: 1030;
-    }
+    @media (min-width: 1200px) {
+     /* Large screens, large desktop styles */
+        
+        .container {
+            max-width: 80%;
+        }
 
-}
+        .ms-lg-5 {
+            margin-left: 3rem;
+        }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-    .navbar-collapse {
-        position: absolute;
-        top: 80px;
-        right: 0;
-        height: auto;  
-        width: 250px;  
-        background-color: var(--primary-bg-color); 
-        box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1); 
-        display: none; 
-        transition: transform 0.3s ease-in-out; 
-    }
-
-    .navbar-collapse.show {
-        display: block; 
-        transform: translateX(0); 
-    }
-
-   
-    .navbar-toggler {
-        position: absolute;
-        right: 10px; 
-    }
-
- 
-    .close-btn {
-        position: absolute; 
-        right: 10px; 
-        background: none;
-        border: none;
-        font-size: 30px;  
-        color: #333;  
-        cursor: pointer;
-        top: -13px;
-    }
-
-    .close-btn:hover {
-        color: #555; 
-    }
-
-    .logo {
-        max-height: 100px; 
-
-    }
-  
-
-        .carousel-control-prev {
-            left:-10%;
+        
+    
+        .navbar-collapse {
+            display: flex; 
+            justify-content: space-between;
+            width: 100%;
         }
     
-        .carousel-control-next {
-            right:-10%;
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: nowrap;
         }
+    
+        .navbar-nav .nav-link {
+            white-space: nowrap;
+        }
+    
+        .logo {
+            max-height: 120px;  /* Adjust for larger screens */
+        }
+    
+        .form-container {
+            width: 70%;
+            padding: 30px;
+            margin: 0 auto;
+        }
+    
+        .carousel-inner img {
+            max-width: 150px; 
+            height: 150px;
+        }
+    
+        .carousel-control-prev, .carousel-control-next {
+            top: 15%;
+        }
+    }
+
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {  
+    /* Tablet + Desktop (Small to Medium) */
+    .navbar-collapse {
+        display: flex; 
+        justify-content: space-between;
+        flex-wrap: wrap; 
+        width: 100%;
+        padding: 0;
+        
+    }
+    
+        .ms-lg-5 {
+        margin-left: 0 !important;
+    }
+
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; 
+    }
+
+    .navbar-nav .nav-item {
+        display: block;
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-link {
+        white-space: nowrap;
+    }
+
+    
+    .form-container {
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+
+   
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    
+       
         .form-container {
             width: 70%;
         }
+
+        .navbar-collapse {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            height: auto;  
+            width: 250px;  
+            background-color: var(--primary-bg-color); 
+            box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1); 
+            display: none; 
+            transition: transform 0.3s ease-in-out; 
+        }
+    
+    
+        .navbar-collapse.show {
+            display: block; 
+            transform: translateX(0); 
+        }
+    
+       
+        .navbar-toggler {
+            position: absolute;
+            right: 10px; 
+        }
+    
+     
+        .close-btn {
+            position: absolute; 
+            right: 10px; 
+            background: none;
+            border: none;
+            font-size: 30px;  
+            color: #333;  
+            cursor: pointer;
+            top: -13px;
+        }
+    
+        .close-btn:hover {
+            color: #555; 
+        }
 }
 
 
 
-@media only screen and (max-width: 768px){  
+@media only screen and (max-width: 768px) {  
 
     body, html {
         overflow: auto;
         max-height: 100% !important;
     }
 
-
-    .logo {
-        max-height: 100px; 
-
-    }
-    
     .navbar-collapse {
         position: absolute;
         top: 80px;
@@ -576,7 +640,7 @@ tbody {
         transition: transform 0.3s ease-in-out; 
     }
 
-    
+
     .navbar-collapse.show {
         display: block; 
         transform: translateX(0); 
@@ -603,6 +667,12 @@ tbody {
     .close-btn:hover {
         color: #555; 
     }
+    .logo {
+        max-height: 100px; 
+
+    }
+    
+    
 
     .form-width {
         width: 100%;
@@ -615,7 +685,6 @@ tbody {
         background-position: center right;
     }
 
-    
 
     .donation-image {
         width: 80%;
