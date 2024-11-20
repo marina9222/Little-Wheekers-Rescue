@@ -11,7 +11,7 @@
     <form method="POST" class="d-flex flex-column align-items-center justify-content-center border p-3 rounded bg-light form-container shadow">
         {% csrf_token %}
 
-        <h2 class="text-center mb-4 font-primary fw-bold text-uppercase">Adopt {{ guinea_pig.name }}</h2>
+        <h3 class="text-center mb-4 font-primary fw-bold text-uppercase">Adopt {{ guinea_pig.name }}</h3>
 
         <div class="text-center">
             <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid mb-4 form-img" />

@@ -7,10 +7,10 @@
 
 
 <div class="container my-4">
-    <h2 class="text-center mb-5 font-primary fw-bold text-uppercase">Add a New Guinea Pig</h2>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form method="post" enctype="multipart/form-data" class="border p-4 rounded bg-light shadow" action="{% url 'home:management' %}">
+                <h3 class="text-center mb-5 font-primary fw-bold text-uppercase">Add a New Guinea Pig</h3>
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="id_name" class="font-secondary">Name</label>

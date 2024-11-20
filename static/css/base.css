@@ -149,6 +149,11 @@ form .form-group button , .btn-cancel{
     padding: 0.75rem 2rem;
 }
 
+.form-container label {
+    display: block; /* Ensures the label is block-level and spans the full width above the input */
+    margin-bottom: 0.5rem; /* Adds spacing between label and input */
+}
+
 /* Carousel */
 
 .list-group-item {
