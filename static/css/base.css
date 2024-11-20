@@ -47,60 +47,31 @@ body > footer {
     /* Logo */
 
   .logo {
-    max-height: 100px; 
-    height: auto;
-    width: auto;
+   height: 60px;
+   width: 60px;
 
   }
 
    /* Navbar */
 
-  .nav-link {
-    padding: 0 15px;
+.navbar-nav.ms-auto {
+    margin-right: 15px; 
   }
-  
-#topnav {
-    background-color: var(--primary-bg-color) !important;
-    height: 80px;
-}
 
-.nav-item .nav-link {
-    white-space: nowrap; 
-}
-
-.navbar-toggler {
-    margin-left: auto;
-    border: none;
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem; 
 }
 
 .navbar-nav .nav-item {
-    margin: 0 15px; 
-}
-.navbar-brand {
-    margin-right: 20px; 
+    margin-right: 10px; 
 }
 
-.navbar-nav {
-    margin-left: 55px;
-}
-
-.close-btn {
-background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #000;
+.collapse .btn-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1050;
-}
-
-.navbar {
-    flex-wrap: nowrap !important;
-    width: 100%; 
-    overflow: hidden;
-}
-
+    top: 0.5rem; 
+    right: 1rem; 
+    z-index: 1051; 
+  }
 
  /* About Us section */
 
