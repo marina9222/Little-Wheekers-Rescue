@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User 
 from django.utils import timezone
@@ -31,7 +32,8 @@ class Adoption(models.Model):
     adopter = models.ForeignKey(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=255, default="N/A")
     phone_number = models.CharField(max_length=15, default="000-000-0000")
-    number_of_guinea_pigs = models.IntegerField(default=0)
+    number_of_guinea_pigs = models.PositiveIntegerField( default = 0),
+    validators=[MinValueValidator(0), MaxValueValidator(10)],
     living_arrangement = models.CharField(
         max_length=10, 
         choices=[('flat', 'Flat'), ('house', 'House')],
