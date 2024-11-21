@@ -529,6 +529,12 @@ tbody {
         .carousel-control-prev, .carousel-control-next {
             top: 15%;
         }
+       
+        .donate-section {
+            width: 60%;
+            margin: 0 auto;
+        }
+       
     }
 
 
