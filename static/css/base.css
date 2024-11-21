@@ -17,6 +17,8 @@
 
 html, body {
     height: 100%;
+    width: auto !important;
+    overflow-x: hidden !important;
 }
 
 body {
@@ -472,6 +474,9 @@ tbody {
 }
 
 
+
+
+
 /*  Media queries  */
 
 
@@ -506,7 +511,7 @@ tbody {
         }
     
         .logo {
-            max-height: 120px;  /* Adjust for larger screens */
+            max-height: 120px; 
         }
     
         .form-container {
@@ -538,10 +543,18 @@ tbody {
         padding: 0;
         
     }
-    
-        .ms-lg-5 {
+   
+    .ms-lg-5 {
         margin-left: 0 !important;
     }
+
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%; 
+        right: 0; 
+        left: auto;
+      }
 
     .navbar-nav {
         display: flex;
@@ -601,7 +614,12 @@ tbody {
             position: absolute;
             right: 10px; 
         }
-    
+        
+        .dropdown-menu {
+            background-color: var(--primary-bg-color) !important;
+            border:  none !important;
+            border-radius: none !important;
+           }
      
         .close-btn {
             position: absolute; 
@@ -715,6 +733,13 @@ tbody {
     
     .navbar-nav {
         margin-left: 0;
+    }
+    
+   
+    .dropdown-menu {
+     background-color: var(--primary-bg-color) !important;
+     border:  none !important;
+     border-radius: none !important;
     }
 }
 

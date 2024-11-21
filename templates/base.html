@@ -45,8 +45,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <button type="button" class="btn-close d-lg-none ms-auto me-2" aria-label="Close" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" ></button>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5">
+        <button type="button" class="btn-close d-lg-none ms-auto me-2" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"></button>
+
+        <!-- Left-aligned links -->
+        <ul class=" navbar-nav me-auto ms-auto mb-lg-0">
           <li class="nav-item">
             <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'home:home' %}">Home</a>
           </li>
@@ -63,27 +65,31 @@
             <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'home:donate' %}">Donate</a>
           </li>
         </ul>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <!-- Dropdown visible on large screens and collapsible on small screens -->
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-none d-lg-inline-block text-decoration-none dark-text fw-bold font-primary text-uppercase" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <!-- Mobile menu -->
+            <a class="nav-link d-lg-none text-decoration-none dark-text fw-bold font-primary text-uppercase" href="#" id="navbarDropdownMobile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+              <span class="arrow-icon ms-2">&#9660;</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="accountDropdown">
               {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-              <li class="nav-item">
-                <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'home:management' %}">Management</a>
-              </li>
-            {% endif %}
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'adoptions:my_profile' %}">My Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'account_logout' %}">Logout</a>
-            </li>
-          {% else %}
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'account_signup' %}">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'account_login' %}">Login</a>
-            </li>
-          {% endif %}
+                 {% if request.user.is_superuser %}
+                  <li><a class="dropdown-item text-decoration-none dark-text font-primary fw-bold text-uppercase" href="{% url 'home:management' %}">Management</a></li>
+                 {% endif %}
+              <li><a class="dropdown-item text-decoration-none dark-text fw-bold font-primary text-uppercase" href="{% url 'adoptions:my_profile' %}">My Profile</a></li>
+              <li><a class="dropdown-item text-decoration-none dark-text  fw-bold  font-primary text-uppercase" href="{% url 'account_logout' %}">Logout</a></li>
+              {% else %}
+              <li><a class="dropdown-item text-decoration-none dark-text font-primary   fw-bold text-uppercase" href="{% url 'account_signup' %}">Sign Up</a></li>
+              <li><a class="dropdown-item text-decoration-none dark-text font-primary   fw-bold text-uppercase" href="{% url 'account_login' %}">Login</a></li>
+              {% endif %}
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
