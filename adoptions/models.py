@@ -30,10 +30,9 @@ class GuineaPig(models.Model):
 class Adoption(models.Model):
     guinea_pig = models.ForeignKey(GuineaPig, on_delete=models.CASCADE)
     adopter = models.ForeignKey(User, on_delete=models.CASCADE)
-    address = models.CharField(max_length=255, default="N/A")
-    phone_number = models.CharField(max_length=15, default="000-000-0000")
+    address = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=15)
     number_of_guinea_pigs = models.PositiveIntegerField(
-        default=0,
         validators=[MinValueValidator(0), MaxValueValidator(10)]
     )
     living_arrangement = models.CharField(
