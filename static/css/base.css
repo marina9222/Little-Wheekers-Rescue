@@ -58,15 +58,12 @@ body > footer {
 
 .navbar-nav.ms-auto {
     margin-right: 15px; 
-  }
+  } 
 
 .navbar-nav .nav-link {
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1rem !important; 
 }
 
-.navbar-nav .nav-item {
-    margin-right: 10px; 
-}
 
 .collapse .btn-close {
     position: absolute;
@@ -488,12 +485,6 @@ tbody {
             max-width: 80%;
         }
 
-        .ms-lg-5 {
-            margin-left: 3rem;
-        }
-
-        
-    
         .navbar-collapse {
             display: flex; 
             justify-content: space-between;
@@ -550,11 +541,6 @@ tbody {
         padding: 0;
         
     }
-   
-    .ms-lg-5 {
-        margin-left: 0 !important;
-    }
-
 
       .dropdown-menu {
         position: absolute;
