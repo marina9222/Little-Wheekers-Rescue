@@ -43,6 +43,10 @@ ALLOWED_HOSTS = [
 ]
 
 
+CORS_ALLOWED_ORIGINS = [
+    "https://ami.responsivedesign.is",  
+]
+
 # Application definition
 
 INSTALLED_APPS = [
