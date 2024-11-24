@@ -150,3 +150,39 @@ Management
 
 
 </details>
+
+### Desktop Wireframes
+
+<details>
+<summary> Click here to see the Desktop Wireframes </summary >
+
+Home
+  - ![screenshot](documentation/wireframes/desktop-home.png)
+
+About Us
+  - ![screenshot](documentation/wireframes/desktop-about-us.png)
+
+Adopt a Guinea pig
+  - ![screenshot](documentation/wireframes/desktop-adopt-guinea-pig.png)
+
+Adoption Policy
+  - ![screenshot](documentation/wireframes/desktop-adoption-policy.png)
+
+Donate
+  - ![screenshot](documentation/wireframes/desktop-donate.png)
+
+Sign Up
+  - ![screenshot](documentation/wireframes/desktop-sign-up.png)
+
+Sign In
+  - ![screenshot](documentation/wireframes/desktop-sign-in.png)
+
+My Profile
+  - ![screenshot](documentation/wireframes/desktop-my-profile.png)
+
+Management
+  - ![screenshot](documentation/wireframes/desktop-management.png)
+
+
+
+</details>
