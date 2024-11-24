@@ -54,6 +54,10 @@ body > footer {
 
   }
 
+  .col-lg-4 {
+    width: unset !important;
+}
+
    /* Navbar */
 
 .navbar-nav.ms-auto {
@@ -527,6 +531,8 @@ tbody {
             width: 60%;
             margin: 0 auto;
         }
+
+       
        
     }
 
@@ -575,10 +581,13 @@ tbody {
         margin: 0 auto;
     }
 
+    .col-md-6 {
+        width: 60% !important;
 
    
 }
 
+}
 
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
