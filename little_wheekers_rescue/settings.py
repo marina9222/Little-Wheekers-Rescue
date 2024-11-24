@@ -42,10 +42,9 @@ ALLOWED_HOSTS = [
     '8000-marina9222-littlewheeke-bpjsm2jg8ch.ws.codeinstitute-ide.net'
 ]
 
+X_FRAME_OPTIONS = "ALLOWALL"
 
 
-
-SECURE_SSL_REDIRECT = True
 
 # Application definition
 
