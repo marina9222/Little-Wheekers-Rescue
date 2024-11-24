@@ -375,7 +375,9 @@ h2.text-center {
 
 .input-group {
     margin-top: 5px;
+    flex-wrap: nowrap !important;
 }
+
 
 .input-group-text {
     background-color:var(--primary-color) !important;
@@ -542,9 +544,7 @@ tbody {
         
     }
 
-    .input-group {
-        flex-wrap: nowrap !important;
-    }
+    
 
       .dropdown-menu {
         position: absolute;
@@ -632,9 +632,7 @@ tbody {
         .close-btn:hover {
             color: #555; 
         }
-        .input-group {
-            flex-wrap: nowrap !important;
-        }
+        
 }
 
 
@@ -735,9 +733,7 @@ tbody {
         margin-left: 0;
     }
     
-    .input-group {
-        flex-wrap: nowrap !important;
-    }
+   
    
     .dropdown-menu {
      background-color: var(--primary-bg-color) !important;
