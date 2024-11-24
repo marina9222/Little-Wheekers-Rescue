@@ -44,7 +44,7 @@ ALLOWED_HOSTS = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://ami.responsivedesign.is",  
+    "https://ui.dev/amiresponsive",  
 ]
 
 # Application definition
