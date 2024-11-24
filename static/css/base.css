@@ -542,6 +542,10 @@ tbody {
         
     }
 
+    .input-group {
+        flex-wrap: nowrap !important;
+    }
+
       .dropdown-menu {
         position: absolute;
         top: 100%; 
@@ -627,6 +631,9 @@ tbody {
     
         .close-btn:hover {
             color: #555; 
+        }
+        .input-group {
+            flex-wrap: nowrap !important;
         }
 }
 
@@ -728,6 +735,9 @@ tbody {
         margin-left: 0;
     }
     
+    .input-group {
+        flex-wrap: nowrap !important;
+    }
    
     .dropdown-menu {
      background-color: var(--primary-bg-color) !important;
