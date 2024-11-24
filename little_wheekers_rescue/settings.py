@@ -192,6 +192,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-marina9222-littlewheeke-bpjsm2jg8ch.ws.codeinstitute-ide.net',
+    'https://little-wheekers-rescue-bfdb249eed00.herokuapp.com/',
 ]
 
 # Media files 
