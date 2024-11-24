@@ -43,9 +43,9 @@ ALLOWED_HOSTS = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://ui.dev/amiresponsive",  
-]
+
+
+SECURE_SSL_REDIRECT = True
 
 # Application definition
 
