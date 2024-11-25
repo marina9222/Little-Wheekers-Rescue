@@ -129,11 +129,17 @@ Management
 Home
   - ![screenshot](documentation/wireframes/tablet-home.png)
 
+Home Admin
+  - ![screenshot](documentation/wireframes/tablet-home-admin.png)
+
 About Us
   - ![screenshot](documentation/wireframes/tablet-about-us.png)
 
 Adopt a Guinea pig
   - ![screenshot](documentation/wireframes/tablet-adopt-guinea-pig.png)
+
+Adopt a Guinea pig Admin
+  - ![screenshot](documentation/wireframes/tablet-adopt-guinea-pig-admin.png)
 
 Adoption Policy
   - ![screenshot](documentation/wireframes/tablet-adoption-policy.png)
@@ -165,11 +171,17 @@ Management
 Home
   - ![screenshot](documentation/wireframes/desktop-home.png)
 
+Home Admin
+  - ![screenshot](documentation/wireframes/desktop-home-admin.png)
+
 About Us
   - ![screenshot](documentation/wireframes/desktop-about-us.png)
 
 Adopt a Guinea pig
   - ![screenshot](documentation/wireframes/desktop-adopt-guinea-pig.png)
+
+Adopt a Guinea pig Admin
+  - ![screenshot](documentation/wireframes/desktop-adopt-guinea-pig-admin.png)
 
 Adoption Policy
   - ![screenshot](documentation/wireframes/desktop-adoption-policy.png)
