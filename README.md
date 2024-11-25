@@ -186,3 +186,84 @@ Management
 
 
 </details>
+
+
+## Features
+
+
+### Existing Features
+
+- **Adopt a Guinea Pig Page**
+
+    - The section of the website allowes users to take a look at the available guinea pigs for adoption so they can choose the perfect match.
+
+![screenshot](documentation/features/feature01.png)
+
+- **Adopt a Guinea Pig form**
+
+    - Adoption form that the user needs to fill out in order to apply for an adoption of the chosen guinea pig.
+
+![screenshot](documentation/features/feature02.png)
+
+- **Donate section**
+
+    - Users can choose the amount that they would like to donate to the rescue.
+
+![screenshot](documentation/features/feature03.png)
+
+- **Donate form**
+
+    - Users can fill the form with their credit/debit card and submit the amount for donation.
+
+![screenshot](documentation/features/feature04.png)
+
+- **Adoption Stories**
+
+    - A section of the website showing some of the adoption stories.
+
+![screenshot](documentation/features/feature05.png)
+
+- **Total amount raised section**
+
+    - A section of the website showing real time sum of the amount donated to the rescue.
+
+![screenshot](documentation/features/feature06.png)
+
+- **Sign In Form**
+
+    - Sign In form for users to be able to log in.
+
+![screenshot](documentation/features/feature07.png)
+
+- **Sign Up Form**
+
+    - Sign Up form for users to register an account.
+
+![screenshot](documentation/features/feature08.png)
+
+- **Add a Guinea pig / Managemenet**
+
+    - Feature allowing the admin to add a new guinea pig to the database.
+
+![screenshot](documentation/features/feature09.png)
+
+- **Edit a Guinea Pig / Managemenet**
+
+    - Feature allowing the admin to add a new guinea pig to the database.
+
+![screenshot](documentation/features/feature10.png)
+
+
+- **Delete a Guinea pig / Managemenet**
+
+    - Feature allowing the admin to add a new guinea pig to the database.
+
+![screenshot](documentation/features/feature11.png)
+
+
+- **My Profile**
+
+    - My Profile section showing the users their history of adoption and donation.
+
+![screenshot](documentation/features/feature12.png)
+
