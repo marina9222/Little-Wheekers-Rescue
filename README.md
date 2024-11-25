@@ -267,3 +267,22 @@ Management
 
 ![screenshot](documentation/features/feature12.png)
 
+- **Sort Button**
+
+    - Sort button allowing users to sort the guinea pigs available for adoption and already adopted ones by age and gender.
+
+![screenshot](documentation/features/feature13.png)
+
+
+
+### Future Features
+
+- Adopted/Not choice to the sort button on avaialble guinea pigs page.
+    - Any additional notes about this feature.
+- YOUR-TITLE-FOR-FUTURE-FEATURE-#2
+    - Any additional notes about this feature.
+- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
+    - Any additional notes about this feature.
+- YOUR-TITLE-FOR-FUTURE-FEATURE-#3
+    - Any additional notes about this feature.
+
