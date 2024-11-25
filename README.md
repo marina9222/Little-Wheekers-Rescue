@@ -86,11 +86,17 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 Home
   - ![screenshot](documentation/wireframes/mobile-home.png)
 
+Home Admin
+  - ![screenshot](documentation/wireframes/mobile-home-admin.png)
+
 About Us
   - ![screenshot](documentation/wireframes/mobile-about-us.png)
 
 Adopt a Guinea pig
   - ![screenshot](documentation/wireframes/mobile-adopt-guinea-pig.png)
+
+Adopt a Guinea pig Admin
+  - ![screenshot](documentation/wireframes/mobile-adopt-guinea-pig-admin.png)
 
 Adoption Policy
   - ![screenshot](documentation/wireframes/mobile-adoption-policy.png)
