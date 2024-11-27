@@ -57,7 +57,7 @@
                             {% if guinea_pig.image %}
                                 <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}">
                             {% else %}
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ guinea_pig.name }}" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}">
+                                <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ guinea_pig.name }}" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}">
                             {% endif %}
                             <!-- Card Body -->
                             <div class="card-body">
