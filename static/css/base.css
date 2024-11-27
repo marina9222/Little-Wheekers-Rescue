@@ -624,7 +624,7 @@ tbody {
         .dropdown-menu {
             background-color: var(--primary-bg-color) !important;
             border:  none !important;
-            border-radius: none !important;
+            border-radius: 0 !important;
            }
      
         .close-btn {
@@ -746,8 +746,8 @@ tbody {
    
     .dropdown-menu {
      background-color: var(--primary-bg-color) !important;
-     border:  0 !important;
-     border-radius: none !important;
+     border:  none !important;
+     border-radius: 0 !important;
     }
 }
 
