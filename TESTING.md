@@ -13,16 +13,16 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| adoptions | adopt_guinea_pig.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| adoptions | adoption_success.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| adoptions | available_guinea_pigs.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| adoptions | my_profile.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | about_us.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | adoption_policy.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | delete_guinea_pig.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | donate.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | donation_cancel.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | donation_success.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | edit_guinea_pig.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | index.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| home | management.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| adoptions | adopt_guinea_pig.html | ![screenshot](documentation/validation/adopt-guinea-pig.png) | pass |
+| adoptions | adoption_success.html | ![screenshot](documentation/validation/adoption-success.png) | pass |
+| adoptions | available_guinea_pigs.html | ![screenshot](documentation/validation/available-guinea-pigs.png) | pass |
+| adoptions | my_profile.html | ![screenshot](documentation/validation/my-profile.png) | pass |
+| home | about_us.html | ![screenshot](documentation/validation/about-us.png) | pass |
+| home | adoption_policy.html | ![screenshot](documentation/validation/adoption-policy.png) | pass |
+| home | delete_guinea_pig.html | ![screenshot](documentation/validation/delete-guinea-pig.png) | pass |
+| home | donate.html | ![screenshot](documentation/validation/donate.png) | pass |
+| home | donation_cancel.html | ![screenshot](documentation/validation/donation-cancel.png) | pass |
+| home | donation_success.html | ![screenshot](documentation/validation/.png) | |
+| home | edit_guinea_pig.html | ![screenshot](documentation/validation/edit-guinea-pig.png) | pass |
+| home | index.html | ![screenshot](documentation/validation/index.png) | pass |
+| home | management.html | ![screenshot](documentation/validation/management.png) | pass |
