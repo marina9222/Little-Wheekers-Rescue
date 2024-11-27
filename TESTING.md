@@ -26,3 +26,13 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | home | edit_guinea_pig.html | ![screenshot](documentation/validation/edit-guinea-pig.png) | pass |
 | home | index.html | ![screenshot](documentation/validation/index.png) | pass |
 | home | management.html | ![screenshot](documentation/validation/management.png) | pass |
+
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| static | base.css | ![screenshot](documentation/validation/base-css.png) | pass |
+
