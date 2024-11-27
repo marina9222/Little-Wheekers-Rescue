@@ -746,7 +746,7 @@ tbody {
    
     .dropdown-menu {
      background-color: var(--primary-bg-color) !important;
-     border:  none !important;
+     border:  0 !important;
      border-radius: none !important;
     }
 }
