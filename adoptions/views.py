@@ -35,7 +35,9 @@ def available_guinea_pigs(request):
 def my_profile(request):
     # Fetch adoptions and donations for the authenticated user
     adoptions = Adoption.objects.filter(adopter=request.user)
-    donations = Donation.objects.filter(user=request.user).order_by('-date')
+    donations = Donation.objects.filter(
+        user=request.user
+    ).order_by('-date')  # Assuming 'date' is a field in the Donation model
 
     return render(request, 'adoptions/my_profile.html', {
         'adoptions': adoptions,
@@ -57,8 +59,8 @@ def adopt_guinea_pig(request, guinea_pig_id):
                 adopter=request.user,
                 address=form.cleaned_data['address'],
                 phone_number=form.cleaned_data['phone_number'],
-                number_of_guinea_pigs=form.cleaned_data
-                ['number_of_guinea_pigs'],
+                number_of_guinea_pigs=form.cleaned_data[
+                    'number_of_guinea_pigs'],
                 living_arrangement=form.cleaned_data['living_arrangement'],
             )
             adoption.save()
@@ -66,12 +68,15 @@ def adopt_guinea_pig(request, guinea_pig_id):
             guinea_pig.save()
 
             user_email = request.user.email
-            subject = f"Thank you for submitting your adoption form!"
+            subject = "Thank you for submitting your adoption form!"
             message = (
                 f"Hi {request.user.first_name},\n\n"
-                f"Thank you for submitting your adoption form for {guinea_pig.name}."
-                "We are excited to process your application and will get back to you soon.\n\n"
-                "Best regards,\nThe Little Wheekers Rescue Team"
+                f"Thank you for submitting your adoption form for "
+                f"{guinea_pig.name}.\n\n"
+                "We are excited to process your application and "
+                "will get back to you soon.\n\n"
+                "Best regards,\n"
+                "The Little Wheekers Rescue Team"
             )
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = [user_email]
