@@ -55,3 +55,14 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | little_wheekers_rescue | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marina9222/Little-Wheekers-Rescue/main/little_wheekers_rescue/settings.py) | ![screenshot](documentation/validation/settings.png) | pass |
 | little_wheekers_rescue | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marina9222/Little-Wheekers-Rescue/main/little_wheekers_rescue/urls.py) | ![screenshot](documentation/validation/little-wheekers-urls.png) | pass |
 |  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marina9222/Little-Wheekers-Rescue/main/manage.py) | ![screenshot](documentation/validation/manage.png) | pass |
+
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Home | About Us | Adopt a Guinea Pig | Adoption Policy | Donate | Sign In | Sign Up | Management | My Profile |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Chrome | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/chrome-about-us.png) | ![screenshot](documentation/browsers/chrome-adopt-guinea-pig.png) | ![screenshot](documentation/browsers/chrome-adoption-policy.png) | ![screenshot](documentation/browsers/chrome-donate.png)| ![screenshot](documentation/browsers/chrome-sign-in.png) | ![screenshot](documentation/browsers/chrome-sign-up.png) | ![screenshot](documentation/browsers/chrome-management.png) | ![screenshot](documentation/browsers/chrome-my-profile.png) | Works as expected |
+| Firefox | ![screenshot](documentation/browsers/mozilla-home.png) | ![screenshot](documentation/browsers/mozilla-about-us.png) | ![screenshot](documentation/browsers/mozilla-adopt-guinea-pig.png) | ![screenshot](documentation/browsers/mozilla-adoption-policy.png) | ![screenshot](documentation/browsers/mozilla-donate.png) |  ![screenshot](documentation/browsers/mozilla-sign-in.png) |  ![screenshot](documentation/browsers/mozilla-sign-up.png) | ![screenshot](documentation/browsers/mozilla-management.png) | ![screenshot](documentation/browsers/mozilla-my-profile.png) | Works as expected |
+| Opera | ![screenshot](documentation/browsers/opera-home.png) | ![screenshot](documentation/browsers/opera-about-us.png) | ![screenshot](documentation/browsers/opera-adopt-guinea-pig.png) | ![screenshot](documentation/browsers/opera-adoption-policy.png) | ![screenshot](documentation/browsers/opera-donate.png) | ![screenshot](documentation/browsers/opera-sign-in.png) | ![screenshot](documentation/browsers/opera-sign-up.png) | ![screenshot](documentation/browsers/opera-management.png) | ![screenshot](documentation/browsers/opera-my-profile.png) | Works as expected |
