@@ -7,6 +7,7 @@ from django.db.models import Sum
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 import stripe
 
 from .models import Donation
@@ -37,6 +38,7 @@ def adoption_policy(request):
 
 # Donation page and Stripe integration
 @csrf_exempt
+@login_required
 def donate(request):
     if request.method == 'POST':
         amount = int(request.POST.get('amount')) * 100  # Convert to cents
