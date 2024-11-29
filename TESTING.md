@@ -148,3 +148,30 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 
 
+## Bugs
+
+
+- Django `ValueError` at /adotpions/adopt
+
+    ![screenshot](documentation/bugs/bug01.png)
+
+    - To fix this, I added char fields to the adoption model.
+
+- Django `ValueError api key` at /guineapig/add
+
+    ![screenshot](documentation/bugs/bug02.png)
+
+    - To fix this, I updated the cloudinary version.
+
+
+- Django `DataError` at /adopt
+
+    ![screenshot](documentation/bugs/bug03.png)
+
+    - To fix this, I added positive integer field validators to the Adoption model living arrangements.
+
+
+## Unfixed Bugs
+
+> [!NOTE]  
+> There are no remaining bugs that I am aware of.
