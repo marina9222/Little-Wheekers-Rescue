@@ -35,6 +35,7 @@ SECRET_KEY = 'django-insecure-=^9@!bn!fl_j=+hh*d1k!q4och#2axc#_+cj*t8y&(&en33@^8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
+
 ALLOWED_HOSTS = [
     'little-wheekers-rescue-bfdb249eed00.herokuapp.com',
     'localhost',
