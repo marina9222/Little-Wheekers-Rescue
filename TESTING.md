@@ -97,3 +97,30 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | My Profile | ![screenshot](documentation/lighthouse/lighthouse-mobile-my-profile.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-my-profile.png) | Some minor warnings |
 | Edit Guinea Pig | ![screenshot](documentation/lighthouse/lighthouse-mobile-edit-guinea-pig.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-edit-guinea-pig.png) | Some minor warnings |
 | Delete Guinea Pig | ![screenshot](documentation/lighthouse/lighthouse-mobile-delete-guinea-pig.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-delete-guinea-pig.png) | Some minor warnings |
+
+
+
+## Defensive Programming
+
+| Page | Expectation | Test | Result | Fix | Screenshot |
+| --- | --- | --- | --- | --- | --- |
+| Adopt a Guinea Pig | | | | | |
+| | Feature is expected to show all the guinea pigs available for adoption and once already adopted when the user visits the page | Tested the feature by opening the page | The feature behaved as expected, and it show all the guinea pigs | Test concluded and passed | ![screenshot](documentation/features/feature01.png) |
+| | Feature is expected to submit an adoption form when the user is authenticated and fills it | Tested the feature by fillign the form after a logged in | The feature behaved as expected, and it successfully submitted the form when everything is filled | Test concluded and passed | ![screenshot](documentation/features/feature02.png) |
+| | Feature is expected to do sort the guinea pigs by age or gender when the user clicks on the sort button | Tested the feature by doing it | The feature behaved as expected, and it did sort the guinea pigs by age and gender | Test concluded and passed | ![screenshot](documentation/features/feature13.png) |
+| Donate | | | | | |
+| | Feature is expected to show different amounts for donation and open the stripe form when the user clicks on the chosen amount | Tested the feature by doing it | The feature behaved as expected, and it open the stripe checkout successfully  | Test concluded and passed | ![screenshot](documentation/features/feature03.png) |
+| | Feature is expected to donate the chosen amount when the users fill their credit card information | Tested the feature by filling the form |The feature behaved as expected, and it  successfully donated the amount | Test concluded and passed | ![screenshot](documentation/features/feature04.png) |
+| Home | | | | | |
+| | Feature is expected to show all the adoption stories in the carousel when the user clicks on the arrow | Tested the feature by doing it | The feature behaved as expected, and it did show all the stories | Test concluded and passed | ![screenshot](documentation/features/feature05.png) |
+| | Feature is expected to show the live donations raised and update each time someone makes a donation | Tested the feature by donating | The feature behaved as expected, and it did update | Test concluded and passed | ![screenshot](documentation/features/feature06.png) |
+| | Feature is expected to sign a user in when the user fills the form and already holds an account | Tested the feature by doing it. | The feature behaved as expected, and it logged me in | Test concluded and passed | ![screenshot](documentation/features/feature07.png) |
+| | Feature is expected to register an user when the user filles all the inputs in the form | Tested the feature by registering an account with filling all the inputs | The feature behaved as expected, and it registered an account which will be active after I confirm my email | Test concluded and passed |  ![screenshot](documentation/features/feature08.png) |
+| Management | | | | | |
+| | Feature is expected to do add a new guinea pig when the site admin fills the form | Tested the feature by doing it. | The feature behaved as expected, and it add the guinea pig | Test concluded and passed | ![screenshot](documentation/features/feature09.png) |
+| | Feature is expected to edit a guinea pig information when the site admin clicks on the edit button on the chosen guinea pig | Tested the feature by clicking on the edit button and fill the form |  The feature behaved as expected, and it updated the guinea pig information | Test concluded and passed  | ![screenshot](documentation/features/feature10.png) |
+| | Feature is expected to delete a guinea pig when the site admin clicks on the delete button on the chosen guinea pig | Tested the feature by clicking on the delete button and confirm that I want to delete the guinea pig | The feature behaved as expected, and it delete the guinea pig | Test concluded and passed | ![screenshot](documentation/features/feature11.png) |
+| My Profile | | | | | |
+| | Feature is expected to show the donation and adoption history of the user if any | Tested the feature by donating and adopting | The feature behaved as expected, and it showed my history of donation and adoption | Test concluded and passed | ![screenshot](documentation/features/feature12.png) |
+
+
