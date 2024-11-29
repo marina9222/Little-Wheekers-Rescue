@@ -170,4 +170,3 @@ def delete_guinea_pig(request, guinea_pig_id):
     return render(request, 'home/delete_guinea_pig.html', {
         'guinea_pig': guinea_pig
     })
-
