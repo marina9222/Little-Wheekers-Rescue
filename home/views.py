@@ -74,23 +74,38 @@ def donate(request):
 def donation_success(request):
     amount = request.session.get('donation_amount')  # Retrieve the amount
 
+    if request.user.is_authenticated and amount:
+        Donation.objects.create(user=request.user, amount=amount / 100)
     if amount:
         # Save donation to database if user is authenticated
         if request.user.is_authenticated:
             Donation.objects.create(user=request.user, amount=amount / 100)
 
-        # Send a thank-you email
         user_email = request.user.email
-        if request.user.is_authenticated else None
+        # Send a thank-you email
+        user_email = request.user.email if request.user.is_authenticated else None
         subject = "Thank You for Your Generous Donation!"
         message = (
+            f"Dear {request.user.first_name},\n\n"
+            f"Thank you for your donation of "
+            f"£{amount / 100:.2f} to Little Wheekers Rescue."
+            "Your support helps us care for and rehome guinea pigs.\n\n"
             f"Dear Supporter,\n\n"
             f"Thank you for your donation of £{amount / 100:.2f} "
             "to Little Wheekers Rescue. Your support helps us care for and "
             "rehome guinea pigs.\n\n"
             "Best regards,\nThe Little Wheekers Rescue Team"
         )
-
+        try:
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [user_email]
+            )
+        except Exception as e:
+            print(f"Error sending email: {e}")  # Handle email failure
+        del request.session['donation_amount']  # Clear session amount
         if user_email:
             try:
                 send_mail(
@@ -101,14 +116,6 @@ def donation_success(request):
                 )
             except Exception as e:
                 print(f"Error sending email: {e}")  # Handle email failure
-
-        # Clear the session amount after processing
-        del request.session['donation_amount']
-
-    return render(request, 'home/donation_success.html', {
-        'amount': amount / 100
-    })
-
 
 # Donation cancel page
 def donation_cancel(request):
