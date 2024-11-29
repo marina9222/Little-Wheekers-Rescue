@@ -79,7 +79,7 @@ def donation_success(request):
             Donation.objects.create(user=request.user, amount=amount / 100)
 
         # Determine user email
-        user_email = request.user.email if request.user.is_authenticated else None
+        user_email = request.user.email
 
         # Send a thank-you email
         subject = "Thank You for Your Generous Donation!"
