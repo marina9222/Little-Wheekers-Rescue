@@ -59,7 +59,8 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As a new site user, I would like to see a section with a bit more information about the rescue, so that I can feel comfortable donating or adopting.
 - As a new site user, I would like to have a donation/adoption history, so I can track it.
 - As a new site user, I would like to have a sort button, so I can sort the guinea pigs by age/gender.
-- As a new site user, I would like to see if I guinea pig has been adopted , so I can know which one is available.
+- As a new site user, I would like to read adoption stories , so I can see how other users feel after successfull adoption.
+- As a new site user, I would like to have a form to fill if I decide to adopt a certain guinea pig.
 
 ### Returning Site Users
 

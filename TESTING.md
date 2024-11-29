@@ -124,3 +124,27 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | | Feature is expected to show the donation and adoption history of the user if any | Tested the feature by donating and adopting | The feature behaved as expected, and it showed my history of donation and adoption | Test concluded and passed | ![screenshot](documentation/features/feature12.png) |
 
 
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| As a new site user, I would like to be able to register an account quick and easy, so that I can use all the features of the website. | ![screenshot](documentation/features/feature08.png) |
+|  As a new site user, I would like to be able to see a page with all the guinea pigs available for adoptions, so that I can browse and choose the best match for me. | ![screenshot](documentation/features/feature01.png) |
+| As a new site user, I would like to be able to make a donation quick and easy, so that I can help the rescue. | ![screenshot](documentation/features/feature03.png) |
+| As a new site user, I would like to be able to make a donation quick and easy, so that I can help the rescue.| ![screenshot](documentation/features/feature04.png) |
+| As a new site user, I would like to see a section with a bit more information about the rescue, so that I can feel comfortable donating or adopting.| ![screenshot](documentation/responsiveness/desktop-about-us.png) |
+| As a new site user, I would like to have a donation/adoption history, so I can track it. | ![screenshot](documentation/features/feature12.png) |
+| As a new site user, I would like to have a sort button, so I can sort the guinea pigs by age/gender. | ![screenshot](documentation/features/feature13.png) |
+| As a new site user, I would like to have a form to fill if I decide to adopt a certain guinea pig.  | ![screenshot](documentation/features/feature02.png) |
+| As a new site user, I would like to read about adoption policy, so that I can feel more comfortable starting the process and feel informed. | ![screenshot](documentation/responsiveness/desktop-adoption-policy.png) |
+| As a new site user, I would like to read adoption stories , so I can see how other users feel after successfull adoption. | ![screenshot](documentation/features/feature05.png) |
+| As a site administrator, I should be able to add a new guinea pig easily, so that I can update the current available guinea pig database. | ![screenshot](documentation/features/feature09.png) |
+| As a site administrator, I should be able to edit a guinea pig, so that I can change any information anytime I want. | ![screenshot](documentation/features/feature10.png) |
+| As a site administrator, I should be able to delete a guinea pig. | ![screenshot](documentation/features/feature11.png) |
+| As a returning site user, I would like to see adopted or not option in the sorting menu, so that I can check easily which ones are adopted or not instead of scrolling all the way down. | future features |
+| As a returning site user, I would like to see a picture and more information about the guinea pig I have adopted in my profile history, so that I can be able to remember the iformation about the guinea pig coming. | future features |
+| As a returning site user, I would like to see more adoption stories, so that I can relate more. | future features |
+| As a returning site user, I would like to get real life notifications when I'm logged in, so that I can track my adoption or donation or have some information about my chosen guinea pig. | future features |
+
+
+
