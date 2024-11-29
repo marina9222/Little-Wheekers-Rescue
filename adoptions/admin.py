@@ -22,3 +22,4 @@ class AdoptionAdmin(admin.ModelAdmin):
 
 admin.site.register(GuineaPig, GuineaPigAdmin)
 admin.site.register(Adoption, AdoptionAdmin)
+

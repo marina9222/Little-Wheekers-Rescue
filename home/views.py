@@ -80,7 +80,8 @@ def donation_success(request):
             Donation.objects.create(user=request.user, amount=amount / 100)
 
         # Send a thank-you email
-        user_email = request.user.email if request.user.is_authenticated else None
+        user_email = request.user.email
+        if request.user.is_authenticated else None
         subject = "Thank You for Your Generous Donation!"
         message = (
             f"Dear Supporter,\n\n"
@@ -107,8 +108,6 @@ def donation_success(request):
     return render(request, 'home/donation_success.html', {
         'amount': amount / 100
     })
-
-
 
 
 # Donation cancel page
