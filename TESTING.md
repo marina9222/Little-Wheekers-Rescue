@@ -79,3 +79,21 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Tablet (DevTools) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/tablet-about-us.png) | ![screenshot](documentation/responsiveness/tablet-adopt-guinea-pig.png) | ![screenshot](documentation/responsiveness/tablet-adoption-policy.png) | ![screenshot](documentation/responsiveness/tablet-donate.png) | ![screenshot](documentation/responsiveness/tablet-sign-in.png) | ![screenshot](documentation/responsiveness/tablet-sign-up.png) | ![screenshot](documentation/responsiveness/tablet-management.png) | ![screenshot](documentation/responsiveness/tablet-my-profile.png) | ![screenshot](documentation/responsiveness/tablet-edit-guinea-pig.png) | ![screenshot](documentation/responsiveness/tablet-delete-guinea-pig.png) | Works as expected |
 | Desktop | ![screenshot](documentation/responsiveness/desktop-home.png) | ![screenshot](documentation/responsiveness/desktop-about-us.png) | ![screenshot](documentation/responsiveness/desktop-adopt-guinea-pig.png) | ![screenshot](documentation/responsiveness/desktop-adoption-policy.png) | ![screenshot](documentation/responsiveness/desktop-donate.png) | ![screenshot](documentation/responsiveness/desktop-sign-in.png) | ![screenshot](documentation/responsiveness/desktop-sign-up.png) | ![screenshot](documentation/responsiveness/desktop-management.png) | ![screenshot](documentation/responsiveness/desktop-my-profile.png) | ![screenshot](documentation/responsiveness/desktop-edit-guinea-pig.png) | ![screenshot](documentation/responsiveness/desktop-delete-guinea-pig.png) | Works as expected |
 
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/lighthouse-mobile-home.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-home.png) | Some minor warnings |
+| About Us | ![screenshot](documentation/lighthouse/lighthouse-mobile-about-us.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-about-us.png) | Some minor warnings |
+| Adopt a Guinea Pig | ![screenshot](documentation/lighthouse/lighthouse-mobile-adopt-guinea-pig.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-adopt-guinea-pig.png) | Slow response time due to large images |
+| Adoption Policy | ![screenshot](documentation/lighthouse/lighthouse-mobile-adoption-policy.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-adoption-policy.png) | Some minor warnings |
+| Donate | ![screenshot](documentation/lighthouse/lighthouse-mobile-donate.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-donate.png) | Some minor warnings |
+| Sign In | ![screenshot](documentation/lighthouse/lighthouse-mobile-sign-in.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-sign-in.png) | Some minor warnings |
+| Sign Up | ![screenshot](documentation/lighthouse/lighthouse-mobile-sign-up.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-sign-up.png) | Some minor warnings |
+| Management | ![screenshot](documentation/lighthouse/lighthouse-mobile-management.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-management.png) | Some minor warnings |
+| My Profile | ![screenshot](documentation/lighthouse/lighthouse-mobile-my-profile.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-my-profile.png) | Some minor warnings |
+| Edit Guinea Pig | ![screenshot](documentation/lighthouse/lighthouse-mobile-edit-guinea-pig.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-edit-guinea-pig.png) | Some minor warnings |
+| Delete Guinea Pig | ![screenshot](documentation/lighthouse/lighthouse-mobile-delete-guinea-pig.png) | ![screenshot](documentation/lighthouse/lighthouse-desktop-delete-guinea-pig.png) | Some minor warnings |
