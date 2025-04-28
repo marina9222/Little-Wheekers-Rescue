@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container my-5">
+    <form method="POST" class="d-flex flex-column align-items-center justify-content-center border p-3 rounded bg-light form-container shadow">
+        {% csrf_token %}
+        <h3 class="text-center mb-4 font-primary fw-bold text-uppercase">Adopt {{ guinea_pig.name }}</h3>
+        <div class="text-center">
+            <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid mb-4 form-img">
+        </div>
+        <!-- loop through the form fields -->
+        {% for field in form %}
+        <div class="form-group form-width mb-2">
+            <label for="{{ field.id_for_label }}" class="font-primary">{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+            <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <!-- Submit Button -->
+        <div class="form-group text-center d-flex gap-3 mt-2 mb-2">
+            <button type="submit" class="btn adopt-now-button font-secondary">Submit</button>
+            <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-cancel bg-secondary text-white font-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

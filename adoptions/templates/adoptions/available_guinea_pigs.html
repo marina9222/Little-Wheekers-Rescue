@@ -1,0 +1,124 @@
+{% extends "base.html" %} 
+
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col text-center mt-5">
+        <h3 class="font-primary text-uppercase fw-bold mb-5">Available guinea pigs for adoption</h3>
+    </div>
+    <div class="row mb-3">
+        <div class="col d-flex justify-content-end mb-5">
+            <div class="dropdown">
+                <button class="btn btn-secondary adopt-now-button" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort By:
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end text-capitalize" aria-labelledby="sortDropdown">
+                    <li><a class="dropdown-item {% if selected_sort == 'age_asc' %}active{% endif %}" href="?sort=age_asc">Age (Ascending) <i class="fa-solid fa-arrow-up"></i></a></li>
+                    <li><a class="dropdown-item {% if selected_sort == 'age_desc' %}active{% endif %}" href="?sort=age_desc">Age (Descending) <i class="fa-solid fa-arrow-down"></i></a></li>
+                    <li><a class="dropdown-item {% if selected_sort == 'gender_male' %}active{% endif %}" href="?sort=gender_male">Gender (Male)</a></li>
+                    <li><a class="dropdown-item {% if selected_sort == 'gender_female' %}active{% endif %}" href="?sort=gender_female">Gender (Female)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        {% if not guinea_pigs %}
+            <h2 class="text-danger text-center">
+                No guinea pigs available for adoption.
+            </h2>
+        {% else %}
+        <div class="container-md">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 g-md-5">
+                {% for guinea_pig in guinea_pigs %}
+                    <div class="col my-3">
+                        <div class="card h-100 adoption-card">
+                             {% if guinea_pig.adopted %}
+                                <!-- corner ribbon -->
+                                <div class="ribbon">
+                                    <span class="adopted">
+                                        ADOPTED
+                                    </span>
+                                </div>
+                            {% endif %}
+                            <!-- Card Image -->
+                            {% if guinea_pig.image %}
+                                <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}">
+                            {% else %}
+                                <img class="card-img-top img-fluid" src="/media/noimage.png" alt="{{ guinea_pig.name }}" data-bs-toggle="modal" data-bs-target="#petModal{{ guinea_pig.id }}">
+                            {% endif %}
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title fs-3 font-secondary">{{ guinea_pig.name }}</h5>
+                                    </div>
+                                </div>
+                                <!-- Pet Details -->
+                                <p class="card-text main-text-color font-secondary">
+                                    <strong>Age:</strong> {{ guinea_pig.age }} years<br>
+                                    <strong>Gender:</strong> {{ guinea_pig.get_gender_display }}<br>
+                                </p>
+                                
+                                {% if not guinea_pig.adopted %}
+                                    <a href="{% url 'adoptions:adopt_guinea_pig' guinea_pig.id %}" class="btn btn-primary adopt-now-button font-secondary">Adopt Now</a>
+                                {% else %}
+                                    <span class="btn btn-secondary font-secondary">Adopted</span>
+                                {% endif %}
+                                {% if request.user.is_superuser %}
+                                <a href="{% url 'home:edit_guinea_pig' guinea_pig.id %}" class="btn btn-primary font-secondary">Edit</a>
+                                <a href="{% url 'home:delete_guinea_pig' guinea_pig.id %}" class="btn btn-danger btn-primary font-secondary">Delete</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+<!-- Modal for each guinea pig -->
+{% for guinea_pig in guinea_pigs %}
+<div class="modal fade" id="petModal{{ guinea_pig.id }}" tabindex="-1" aria-labelledby="petModal{{ guinea_pig.id }}Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="petModal{{ guinea_pig.id }}Label">{{ guinea_pig.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% if guinea_pig.image %}
+                    <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="card-img-top img-fluid w-100">
+                {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ guinea_pig.name }}">
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+
+						
+{% endblock %}

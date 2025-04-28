@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="about-us-container">
+
+    <div class="row">
+    <div class="col text-center mt-4">
+    <h3 class="font-primary fw-bold text-uppercase">Adoption Policy</h3>
+    </div>
+    </div>
+    <div class="row"></div>
+    <div class="col text-center mt-3">
+        <h4 class="font-primary fw-bold">Accommodation</h4>
+        <p class="text-center font-secondary">Cages must allow 140cm on one level as a minimum - however we recommend bigger if it is possible.<br>
+          We recommend C&C enclosures. Not all of our guinea pigs will be suitable for a 140 cage and we will advise where we think this is the case.<br>
+          We will only re-home where the cage is kept inside a house all year.</p>
+    </div>
+    <div class="text-center">
+    <img src="{% static 'images/policy.png' %}" class="img-fluid rounded" alt="policy">
+    </div>
+
+    <div class="col text-center mt-3">
+    <h4 class="text-center font-primary fw-bold">Bedding</h4>
+    <p class="text-center font-secondary">No sawdust or wood shavings should be used within the cage.<br>
+      Many far better alternatives are available.</p>
+    </div>
+    <div class="col text-center mt-3"></div>
+    <h4 class="text-center font-primary fw-bold">Water,Hay & Food</h4>
+    <p class="text-center font-secondary">Fresh water must be available at all times.<br>
+     Good quality hay must be available for bedding, play and eating. We do not recommend hay racks.<br>
+      Foraging is natural behaviour for guinea pigs. Hay must be plentiful and given daily as it makes up 80% of their diet.<br>
+      Pellet type feed must be available - not muesli types as they encourage selective feeding. <br>
+      Vegetables/salad items and occasional fruit should be fed twice daily - around a cup per day per pig.
+    </p>
+
+
+    <div class="col text-center mt-3"></div>
+    <h4 class="text-center font-primary fw-bold">Items in home</h4>
+    <p class="text-center font-secondary">Hideys and/or tunnels must be available as guinea pigs need to have shelter to simulate their environment and allow natural behaviour.
+    </p>
+
+    <div class="col text-center mt-3"></div>
+    <h4 class="font-primary text-center fw-bold">Company</h4>
+    <p class="text-center font-secondary">We do not re-home guinea pigs to live alone and they must have the same species company.<br>
+     They must be protected from direct contact with other animals. We do not re-home to live with rabbits.
+    </p>
+
+    <div class="col text-center mt-3"></div>
+    <h4 class="text-center font-primary fw-bold">Care</h4>
+    <p class="text-center font-secondary">All signs of illness or injury must be referred to a qualified vet for treatment.<br>
+    Our piggy's must not be used for breeding purposes.<br>
+    We always home check prior to adoption
+    </p>
+
+    <div class="row"></div>
+    <div class="col text-center mt-3">
+            <div class="border p-3" style="display: inline-block;">
+                <p class="font-secondary">Single guinea pig (to live with others): <strong>£25</strong></p>
+                <p class="font-secondary">Pair: <strong>£40</strong></p>
+            </div>
+    </div>
+
+    <div class="text-center mt-3 mb-3">
+    <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary adopt-now-button text-uppercase">Adopt</a>
+    </div>
+</div>
+{% endblock %}

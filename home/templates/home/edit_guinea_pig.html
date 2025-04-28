@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data" class="border p-4 rounded bg-light shadow" action="{% url 'home:edit_guinea_pig' guinea_pig.id %}">
+                <h3 class="text-center mb-5 font-primary fw-bold text-uppercase">Edit Guinea Pig</h3>
+                {% csrf_token %}
+                
+                <!-- Name Field -->
+                <div class="form-group mb-3">
+                    <label for="id_name" class="font-secondary">Name</label>
+                    <input type="text" class="form-control" id="id_name" name="name" value="{{ guinea_pig.name }}" placeholder="Enter guinea pig's name">
+                </div>
+                
+                <!-- Birth Year Field -->
+                <div class="form-group mb-3">
+                    <label for="id_birth_year" class="font-secondary">Birth Year</label>
+                    <input type="number" class="form-control" id="id_birth_year" name="birth_year" value="{{ guinea_pig.birth_year }}" placeholder="Enter birth year">
+                </div>
+                
+                <!-- Gender Field -->
+                <div class="form-group mb-3">
+                    <label for="id_gender" class="font-secondary">Gender</label>
+                    <select class="form-control" id="id_gender" name="gender">
+                        <option value="M" {% if guinea_pig.gender == "M" %}selected{% endif %} class="font-secondary">Male</option>
+                        <option value="F" {% if guinea_pig.gender == "F" %}selected{% endif %} class="font-secondary">Female</option>
+                    </select>
+                </div>
+                
+                <!-- Image Field -->
+                <div class="form-group mb-3">
+                    <label for="id_image" class="font-secondary">Image</label>
+                    <input type="file" class="form-control-file" id="id_image" name="image">
+                    {% if guinea_pig.image %}
+                        <div class="mt-3">
+                            <img src="{{ guinea_pig.image.url }}" alt="{{ guinea_pig.name }}" class="img-fluid rounded shadow-sm mt-2" style="max-width: 150px; max-height: 150px;">
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Adopted Field -->
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="id_adopted" name="adopted" {% if guinea_pig.adopted %}checked{% endif %}>
+                    <label class="form-check-label font-secondary" for="id_adopted">Adopted</label>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                    <button type="submit" class="btn adopt-now-button font-secondary p-2">Update Guinea Pig</button>
+                    <a href="{% url 'adoptions:available_guinea_pigs' %}" class="btn btn-secondary font-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

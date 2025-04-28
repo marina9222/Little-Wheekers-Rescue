@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h3 class="font-primary fw-bold">Donation Canceled</h3>
+    <p class="font-secondary">It seems you canceled your donation. If this was a mistake, you can try again.</p>
+    <a href="{% url 'home:donate' %}" class="btn adopt-now-button font-secondary">Return to Donation Page</a>
+</div>
+{% endblock %}
